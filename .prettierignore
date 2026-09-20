@@ -1,0 +1,8 @@
+.next
+coverage
+figma
+node_modules
+public
+reports
+CODE_REVIEW.md
+package-lock.json

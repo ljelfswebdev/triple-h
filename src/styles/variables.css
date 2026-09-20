@@ -1,0 +1,59 @@
+:root {
+  /* Darkened brand actions retain their character while passing WCAG AA with white text. */
+  --color-primary: #e30613;
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 82%, #000);
+  --color-secondary: #f5d000;
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 82%, #000);
+  --color-tertiary: #151515;
+  --color-tertiary-dark: color-mix(in srgb, var(--color-tertiary) 82%, #000);
+  --color-black: #0b0b0c;
+  --color-grey: #707070;
+  --color-white: #fff;
+  --color-white-dark: color-mix(in srgb, var(--color-white) 88%, var(--color-black));
+  --color-border: #d9d9d9;
+  --color-surface: #f2f1ed;
+  --color-surface-strong: #deddd8;
+  --color-error: #b91c1c;
+  --color-success: #047857;
+  --gradient-orange: linear-gradient(140deg, #b8000c 12.62%, #e30613 69.33%);
+  --glass-background: rgb(255 255 255 / 12%);
+  --glass-border: rgb(255 255 255 / 28%);
+  --glass-frost: 24px;
+  --glass-saturation: 180%;
+  --glass-radius: var(--radius-medium);
+  --glass-shadow:
+    0 22px 55px rgb(0 45 48 / 24%), 0 4px 14px rgb(0 0 0 / 10%),
+    inset 0 1px 0 rgb(255 255 255 / 48%),
+    inset 1px 0 0 rgb(255 255 255 / 12%),
+    inset 0 -1px 0 rgb(255 255 255 / 9%);
+  --radius-small: 6px;
+  --radius-medium: 10px;
+  --radius-large: 18px;
+  --container-width: 1360px;
+  --container-gutter: clamp(20px, 4vw, 64px);
+  --header-height: 96px;
+  --font-h1: clamp(52px, 8vw, 124px);
+  --font-h2: clamp(40px, 5.5vw, 76px);
+  --font-h3: clamp(25.6px, 3vw, 40px);
+  --font-h4: clamp(21.6px, 2vw, 32px);
+  --font-h5: clamp(18.4px, 1.5vw, 24px);
+  --font-h6: clamp(16px, 1.2vw, 20px);
+  --font-body-large: clamp(18px, 1.5vw, 22px);
+  --font-body: clamp(16px, 1.1vw, 16px);
+  --font-body-small: clamp(12px, 1vw, 14px);
+  --section-padding-small: clamp(32px, 4vw, 32px);
+  --section-padding-medium: clamp(48px, 6vw, 64px);
+  --section-padding-large: clamp(64px, 8vw, 128px);
+  --transition-fast: 150ms;
+  --transition-default: 250ms;
+  --transition-slow: 500ms;
+  --shadow-small: 0 2px 8px #0001;
+  --shadow-medium: 0 10px 30px #0002;
+  --shadow-large: 0 20px 60px #0003;
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  --z-header: 50;
+  --z-dropdown: 60;
+  --z-overlay: 70;
+  --z-modal: 80;
+  --z-loader: 90;
+}

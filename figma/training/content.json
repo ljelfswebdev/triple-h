@@ -1,0 +1,63 @@
+{
+  "page": {
+    "slug": "training",
+    "title": "CPC Training",
+    "content": {
+      "banner": {
+        "title": "CPC Training<span class=\"freight-accent-teal\">.</span>",
+        "subtitle": "Professional CPC training built around drivers<br />and businesses.",
+        "text": "<p>PBL Training delivers straightforward, professional CPC training backed by real transport industry experience, with flexible options for individuals and businesses.</p>",
+        "link": { "label": "Explore Training Modules", "url": "#training-modules", "newTab": false },
+        "imageAsset": "training-hero"
+      },
+      "whyChoose": {
+        "title": "Why Choose PBL Training",
+        "text": "<p>Whether you’re booking for yourself, a small team or a larger group, PBL provides practical CPC training with a straightforward, flexible approach.</p>",
+        "link": { "label": "Enquire About Our Training", "url": "#training-enquiry", "newTab": false },
+        "imageAsset": "training-intro",
+        "items": [
+          { "text": "<p>Trainer with 16 years’ industry experience</p>" },
+          { "text": "<p>Training for individuals and companies</p>" },
+          { "text": "<p>Flexible training options</p>" },
+          { "text": "<p>Birmingham-based training</p>" },
+          { "text": "<p>Friendly, knowledgeable support</p>" },
+          { "text": "<p>Practical, real-world course content</p>" },
+          { "text": "<p>Bespoke group training available</p>" },
+          { "text": "<p>Discounts for large bookings</p>" },
+          { "text": "<p>Weekend courses available</p>" }
+        ]
+      },
+      "modules": {
+        "title": "Our CPC Training Modules",
+        "text": "<p>Choose from a range of professional CPC training modules for drivers and transport businesses, with flexible options for individuals and groups. <strong>Each course includes seven hours of training, excluding breaks.</strong></p>",
+        "decorationAsset": "modules-decoration",
+        "items": [
+          { "title": "Health & Safety", "points": ["Health, Safety and Emergencies", "Personal Health and Wellbeing", "Professional Driver and Company Issues"] },
+          { "title": "Tiredness, Diet & Lifestyle", "points": ["Personal Health and Wellbeing", "Physical/Mental Health and Wellbeing"] },
+          { "title": "Licence, Weights & Dimensions", "points": ["Legislation (including Drivers Hours, Rules and Regulations and the Working Time Directive)", "Professional Driver and Company Issues", "Regulations for Carriage of Goods (LGV)"] },
+          { "title": "Vehicle Checks & Defects", "points": ["Health, Safety and Emergencies", "Legislation (including Drivers Hours, Rules and Regulations and the Working Time Directive)", "Personal Health and Wellbeing", "Professional Driver and Company Issues", "Regulations for Carriage of Goods (LGV)", "Vehicle Systems (Safety Controls)"] },
+          { "title": "Company & Public Image", "points": ["Customer Service / Disability Awareness (PCV)", "Economic Environment for Carriage of Goods (LGV)", "Professional Driver and Company Issues"] },
+          { "title": "Drivers Hours", "points": ["Understanding drivers’ hours and working time regulations", "Driving limits, breaks and daily/weekly rest requirements", "Tachograph use, record keeping and avoiding common infringements"] },
+          { "title": "Economical Driving", "points": ["Economic Environment for Carriage of Goods (LGV)", "Economic Environment for Carriage of Passengers (PCV)", "Vehicle Systems (Safety Controls)", "Vehicle Systems (Transmission System)"] },
+          { "title": "Tachograph", "points": ["Legislation (including Drivers Hours, Rules and Regulations and the Working Time Directive)"] },
+          { "title": "Security", "points": ["Health, Safety and Emergencies", "Prevention of Criminality and Trafficking", "Professional Driver and Company Issues"] },
+          { "title": "Emergency Aid", "points": ["First Aid", "Personal Health and Wellbeing", "Physical/Mental Health and Wellbeing"] },
+          { "title": "Safe Loading", "points": ["Principles of safe and secure vehicle loading", "Correct use of load restraints and securing equipment", "Understanding load distribution, stability and driver responsibilities"] }
+        ],
+        "link": { "label": "Enquire Now", "url": "#training-enquiry", "newTab": false },
+        "cta": { "title": "Can’t find the course<br />you need?", "text": "<p>Tell us what you’re looking for, and our team will be happy to help you find the right training option.</p>", "link": { "label": "Contact Us", "url": "#training-enquiry", "newTab": false }, "imageAsset": "modules-cta" }
+      },
+      "testimonials": { "title": "Happy Customers", "text": "<p>Our training customers value PBL for practical, professional CPC courses, knowledgeable instructors and a straightforward approach from enquiry through to completion.</p>", "featuredName": "John Smith" },
+      "location": {
+        "title": "CPC Training in<br />Birmingham & Nationwide",
+        "text": "<p>Conveniently based in Birmingham, PBL Training provides professional CPC training for individual drivers, transport operators and businesses across the local area. With practical, industry-led courses and flexible options for groups, our team makes it straightforward to arrange the training you need.</p>",
+        "address": "<p><strong>PBL (UK) LTD</strong><br />Unit K43 Hastingwood Industrial Park,<br />Wood Lane, Birmingham, B24 9QR</p>",
+        "calloutTitle": "Not in Birmingham? We can come to you.",
+        "calloutText": "<p>We can come to you and deliver professional CPC training directly at your premises, making it convenient and straightforward for your drivers and team. Alternatively, we also offer selected CPC courses online, giving you greater flexibility to complete your training wherever you’re based.</p>",
+        "imageAsset": "training-map"
+      },
+      "form": { "title": "Enquire About CPC Training", "text": "<p>Tell us which course you’re interested in and a little about your training requirements. Our team will get back to you to discuss the best option for you or your drivers.</p>", "formKey": "training" }
+    },
+    "seo": { "title": "CPC Training | PBL", "description": "Professional CPC training in Birmingham and nationwide for individual drivers, transport operators and businesses." }
+  }
+}

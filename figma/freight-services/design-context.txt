@@ -1,0 +1,872 @@
+const imgLayer1 = "https://www.figma.com/api/mcp/asset/da52e1f5-b8c0-4ce8-8d0d-4d79faf17d27.svg";
+const imgGroup = "https://www.figma.com/api/mcp/asset/f5d69465-d21f-46ce-9a94-7f11a9174824.svg";
+const imgGroup1 = "https://www.figma.com/api/mcp/asset/ff71436b-19e8-4a31-b933-4225b6b4ec0b.svg";
+const imgPblTrainingPrimary3 = "https://www.figma.com/api/mcp/asset/d59ea6fb-d1a6-4f59-9a2e-4caea722ee7e.svg";
+const imgEllipse46 = "https://www.figma.com/api/mcp/asset/fb0dcbe2-dea1-4033-bd33-a4447ac4e32f.svg";
+const imgGroup9 = "https://www.figma.com/api/mcp/asset/73835c90-f555-4026-8b61-2b99052b54d0.svg";
+const img5E96C4CdA5D443578C7F37Aacb5A5F832 = "https://www.figma.com/api/mcp/asset/abc6f70d-4428-4dec-ae7f-46d762162744.png";
+const img25Ebbd6B2E0049DbB3B140F98147F4632 = "https://www.figma.com/api/mcp/asset/20680e90-58d8-405d-9d1d-70e9fc6b24c6.png";
+const imgChatGptImageAug112026At121023Pm2 = "https://www.figma.com/api/mcp/asset/9e9228b2-5be0-4690-83c3-6a2aca3794b8.png";
+const imgRectangle = "https://www.figma.com/api/mcp/asset/9e114122-9a1e-4469-b287-ca73f6ca8e16.png";
+const img5E96C4CdA5D443578C7F37Aacb5A5F831 = "https://www.figma.com/api/mcp/asset/de3661e8-318b-42f7-b332-a9c43e4ccaa0.svg";
+const imgVector = "https://www.figma.com/api/mcp/asset/018e3cbc-6342-4fb9-a02b-affec495376b.svg";
+const img25Ebbd6B2E0049DbB3B140F98147F4631 = "https://www.figma.com/api/mcp/asset/befeac50-a8cb-41ca-96d7-6b371307ba7a.svg";
+const imgVector1 = "https://www.figma.com/api/mcp/asset/cb1efe59-6f51-4a61-a81b-02273f47e239.svg";
+const imgVector2 = "https://www.figma.com/api/mcp/asset/75498d45-c1f4-45d1-a235-b95636f9df00.svg";
+const imgVector3 = "https://www.figma.com/api/mcp/asset/e13b1f95-34c9-40c0-82e2-10588835c277.svg";
+const imgChatGptImageAug112026At121023Pm1 = "https://www.figma.com/api/mcp/asset/c58dda12-ac38-49f0-b2e3-985ddbc8aa2b.svg";
+const imgVector4 = "https://www.figma.com/api/mcp/asset/6f3b978d-de5a-4775-a85e-feefc34a7008.svg";
+const imgVector5 = "https://www.figma.com/api/mcp/asset/17de4c1a-a2da-48ba-9865-f43052c388c4.svg";
+const imgVector6 = "https://www.figma.com/api/mcp/asset/1ae8070b-35aa-4f8f-b175-ef9b03e7c789.svg";
+const imgO2 = "https://www.figma.com/api/mcp/asset/d6a4665d-d6e1-477a-a85a-da9f23e1a1e9.svg";
+const imgO3 = "https://www.figma.com/api/mcp/asset/28f3da15-f050-49e1-8fbc-073b8be689c9.svg";
+const imgO4 = "https://www.figma.com/api/mcp/asset/d01f30da-f4fe-477c-a4a7-6f7db2d4b555.svg";
+const imgO5 = "https://www.figma.com/api/mcp/asset/afd8a68a-7e46-4efa-8f3d-bc4ba1bfa189.svg";
+const imgO6 = "https://www.figma.com/api/mcp/asset/db572f1d-0605-4304-b213-75660df26f5d.svg";
+const imgIoe2 = "https://www.figma.com/api/mcp/asset/f320575c-b81f-4f53-81e3-564eee0a9847.svg";
+const imgGroup4 = "https://www.figma.com/api/mcp/asset/206ba17d-64c5-4646-a918-39aa7148512d.svg";
+const imgVector7 = "https://www.figma.com/api/mcp/asset/28d11bc4-3b2c-49ee-815e-97d3bab437bd.svg";
+const imgVector8 = "https://www.figma.com/api/mcp/asset/54b53f15-4d36-48c8-9850-dd54f2621714.svg";
+const imgVector9 = "https://www.figma.com/api/mcp/asset/3d34f189-e5f1-4ca3-8b01-d784a13538f2.svg";
+const imgVector10 = "https://www.figma.com/api/mcp/asset/74f57b33-dc4c-403e-a360-e70d69152cb7.svg";
+const imgVector11 = "https://www.figma.com/api/mcp/asset/7e384177-4cc8-4f7d-8e1b-f6b196d09a9a.svg";
+const imgVector12 = "https://www.figma.com/api/mcp/asset/de85a14c-c044-45e3-abfc-1f9857ed0751.svg";
+const imgVector13 = "https://www.figma.com/api/mcp/asset/cc73c1d1-fc71-497e-9dc8-be4a777ef1b3.svg";
+const imgVector14 = "https://www.figma.com/api/mcp/asset/26e6fb8e-991e-4846-a2e7-0d955b2b627a.svg";
+const imgVector15 = "https://www.figma.com/api/mcp/asset/1dafbe69-baf2-4c9e-a5b3-c33f92f6f190.svg";
+const imgIoe3 = "https://www.figma.com/api/mcp/asset/916b033b-dd59-4c0f-a181-7fbd4d71f616.svg";
+const imgIoe4 = "https://www.figma.com/api/mcp/asset/4ef2c0a5-fb92-4634-bb74-b0f6e88b28ef.svg";
+const imgGroup2 = "https://www.figma.com/api/mcp/asset/fbf8ec9b-2621-4896-a3d0-638f784a82e7.svg";
+const imgVector16 = "https://www.figma.com/api/mcp/asset/5fa833f5-fa57-4281-897d-0d5bc8c368b4.svg";
+const imgVector17 = "https://www.figma.com/api/mcp/asset/51786a19-ca06-4823-adcc-b4b33e2922fc.svg";
+const imgVector18 = "https://www.figma.com/api/mcp/asset/5eb1f122-445a-4aca-819b-d9e1b797bb3d.svg";
+const imgVector19 = "https://www.figma.com/api/mcp/asset/1a6744c3-1bf1-4a4c-bbdd-52b0fd84ec70.svg";
+const imgVector20 = "https://www.figma.com/api/mcp/asset/51493815-9c67-4262-86e6-b696ca5fce76.svg";
+const imgVector21 = "https://www.figma.com/api/mcp/asset/2d37e06e-2b50-4c91-921a-a649c1abbfe1.svg";
+const imgVector22 = "https://www.figma.com/api/mcp/asset/2a30bce1-89e5-413b-a08f-87d21eba14cd.svg";
+const imgVector23 = "https://www.figma.com/api/mcp/asset/55018c0b-4017-4b35-b394-977c099515fc.svg";
+const imgVector24 = "https://www.figma.com/api/mcp/asset/bfc7f6ca-afb5-47c9-b51f-a97ea0649152.svg";
+const imgFrame360 = "https://www.figma.com/api/mcp/asset/54112107-98fc-4345-9a83-f9f64debf305.svg";
+const imgFooterLinksList = "https://www.figma.com/api/mcp/asset/049c7db0-f4e2-4513-8a9d-dff0dc443f10.svg";
+const imgSeperator = "https://www.figma.com/api/mcp/asset/ba7be51c-07c0-4d55-b01c-dd6ed09c8a1f.svg";
+
+type HeaderProps = {
+  className?: string;
+  property1?: "Fixed";
+  show1stLogo?: boolean;
+  show2ndLogo?: boolean;
+  show3rdLogo?: boolean;
+};
+
+function Header({ className, property1 = "Fixed", show1stLogo = true, show2ndLogo = true, show3rdLogo = true }: HeaderProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/colours\\/black,#222)] content-stretch flex h-[90px] items-center justify-between px-[78px] relative w-[1440px]"} data-node-id="2097:1433">
+      <a className="content-stretch cursor-pointer flex items-center relative shrink-0 w-[329.5px]" data-node-id="2212:2157">
+        <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="2212:2242">
+          {show1stLogo && (
+            <div className="h-[64px] relative shrink-0 w-[104px]" data-node-id="2212:2243" data-name="Layer_1">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgLayer1} />
+            </div>
+          )}
+          {show2ndLogo && (
+            <div className="h-[64px] overflow-clip relative shrink-0 w-[88px]" data-node-id="2217:1640" data-name="pbl-tranport-09 1">
+              <div className="absolute inset-[0_0_10.4%_0]" data-node-id="2217:1641" data-name="Group">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup} />
+              </div>
+              <div className="absolute inset-[92.88%_0.7%_1.82%_3.26%]" data-node-id="2217:1647" data-name="Group">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup1} />
+              </div>
+            </div>
+          )}
+          {show3rdLogo && (
+            <div className="h-[50px] relative shrink-0 w-[102px]" data-node-id="2212:2249" data-name="pbl-training-primary 3">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPblTrainingPrimary3} />
+            </div>
+          )}
+        </div>
+      </a>
+      <div className="content-stretch flex h-full items-center relative shrink-0" data-node-id="2097:1440">
+        <div className="content-stretch flex gap-[56px] h-full items-end relative shrink-0" data-node-id="2097:1679">
+          <div className="content-stretch flex gap-[48px] h-[53px] items-center relative shrink-0" data-node-id="2097:1680">
+            <div className="content-stretch flex flex-col h-full items-start justify-between relative shrink-0" data-node-id="2119:3966" data-name="Header Links">
+              <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2119:3966;2095:1362">
+                Freight Services
+              </p>
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I2119:3966;2095:1363">
+                <div className="bg-[var(--brand\/colours\/primary,#ff914d)] h-[2px] relative shrink-0 w-0" data-node-id="I2119:3966;2095:1364" />
+              </div>
+            </div>
+            <a className="content-stretch cursor-pointer flex flex-col h-full items-start justify-between relative shrink-0" data-node-id="2097:1682" data-name="Header Links">
+              <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-left w-full" data-node-id="I2097:1682;2095:1362">
+                CPC Training
+              </p>
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I2097:1682;2095:1363">
+                <div className="bg-[var(--brand\/colours\/primary,#ff914d)] h-[2px] relative shrink-0 w-0" data-node-id="I2097:1682;2095:1364" />
+              </div>
+            </a>
+            <a className="content-stretch cursor-pointer flex flex-col h-full items-start justify-between relative shrink-0" data-node-id="2097:1684" data-name="Header Links">
+              <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-left w-full" data-node-id="I2097:1684;2095:1362">
+                Contact
+              </p>
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I2097:1684;2095:1363">
+                <div className="bg-[var(--brand\/colours\/primary,#ff914d)] h-[2px] relative shrink-0 w-0" data-node-id="I2097:1684;2095:1364" />
+              </div>
+            </a>
+          </div>
+          <div className="content-stretch flex gap-[12px] h-[90px] items-center py-[12px] relative shrink-0" data-node-id="2097:1685">
+            <div className="[word-break:break-word] border-2 border-[var(--brand\/colours\/primary,#ff914d)] border-solid content-stretch flex gap-[8px] h-[50px] items-center justify-center min-w-[120px] px-[16px] py-[10px] relative rounded-[50px] shrink-0 text-[16px] whitespace-nowrap" data-node-id="2097:1686" data-name="Buttons/Icon">
+              <p className="font-['Font_Awesome_7_Pro:Solid'] leading-[20px] not-italic relative shrink-0 text-[color:var(--brand\/colours\/primary,#ff914d)]" data-node-id="I2097:1686;309:2680">
+                phone
+              </p>
+              <p className="font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[color:var(--brand\/colours\/white,white)] text-center" data-node-id="I2097:1686;309:2681">
+                0121 270 7264
+              </p>
+            </div>
+            <div className="bg-[var(--brand\/colours\/white,white)] content-stretch flex h-[50px] items-center justify-center min-w-[120px] px-[16px] py-[10px] relative rounded-[50px] shrink-0" data-node-id="2097:1687" data-name="Buttons">
+              <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] text-center whitespace-nowrap" data-node-id="I2097:1687;228:1734">
+                Get A Quote
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type SocialIconsProps = {
+  className?: string;
+  property1?: "Main";
+};
+
+function SocialIcons({ className, property1 = "Main" }: SocialIconsProps) {
+  return (
+    <div className={className || "relative size-[36px]"} data-node-id="83:1041">
+      <div className="absolute inset-[6.25%]" data-node-id="83:1042">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse46} />
+      </div>
+      <p className="[word-break:break-word] absolute bottom-[28.13%] font-['Font_Awesome_6_Brands:Regular'] leading-[17px] left-[37.5%] not-italic right-[37.5%] text-[14px] text-[color:var(--brand\/colours\/white,white)] text-center top-1/4" data-node-id="83:1043">
+        facebook-f
+      </p>
+    </div>
+  );
+}
+
+type FormCheckboxProps = {
+  className?: string;
+  property1?: "Default";
+};
+
+function FormCheckbox({ className, property1 = "Default" }: FormCheckboxProps) {
+  return (
+    <div className={className || "content-stretch flex items-center relative"} data-node-id="337:1671">
+      <div className="relative shrink-0 size-[20px]" data-node-id="337:1592">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup9} />
+      </div>
+    </div>
+  );
+}
+
+type CircleArrowsProps = {
+  className?: string;
+  colour?: "White";
+  property1?: "Left" | "Right";
+  status?: "Default";
+};
+
+function CircleArrows({ className, colour = "White", property1 = "Left", status = "Default" }: CircleArrowsProps) {
+  const isLeftAndDefaultAndWhite = property1 === "Left" && status === "Default" && colour === "White";
+  return (
+    <div className={className || "bg-[var(--brand\\/colours\\/white,white)] relative rounded-[80px] size-[40px]"} id={isLeftAndDefaultAndWhite ? "node-299_993" : "node-299_987"}>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Font_Awesome_7_Pro:Regular'] leading-[20px] left-1/2 not-italic text-[14px] text-[color:var(--brand\/colours\/black,#222)] text-center top-[calc(50%-10px)] whitespace-nowrap" id={isLeftAndDefaultAndWhite ? "node-299_994" : "node-299_988"}>
+        {property1 === "Right" && status === "Default" && colour === "White" ? "arrow-right" : "arrow-left"}
+      </p>
+    </div>
+  );
+}
+
+export default function FreightServices() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="2242:4936" data-name="Freight Services">
+      <div className="absolute contents left-px top-[3250px]" data-node-id="2262:3395" data-name="Mask group">
+        <div className="absolute h-[1077px] left-[-215px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[216px_242px] mask-size-[1440px_690px] top-[3008px] w-[1913px]" data-node-id="2262:3392" style={{ maskImage: `url("${img5E96C4CdA5D443578C7F37Aacb5A5F831}")` }} data-name="5e96c4cd-a5d4-4357-8c7f-37aacb5a5f83 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5E96C4CdA5D443578C7F37Aacb5A5F832} />
+        </div>
+      </div>
+      <div className="absolute flex h-[690px] items-center justify-center left-[-20px] top-[3250px] w-[1461px]" data-node-id="2261:3368">
+        <div className="flex-none rotate-180">
+          <div className="h-[690px] relative w-[1461px]" style={{ backgroundImage: "linear-gradient(70.989378720505deg, rgba(0, 0, 0, 0.5) 19.107%, rgba(0, 0, 0, 0.64) 44.01%, rgba(0, 0, 0, 0.85) 87.607%)" }} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute bottom-[94.41%] left-[calc(50%+0.3px)] top-[4.64%] w-[512.601px]" data-node-id="2247:5846" data-name="Vector">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector} />
+      </div>
+      <div className="absolute contents left-0 top-[90px]" data-node-id="2243:5482" data-name="Mask group">
+        <div className="absolute h-[727.641px] left-[-361.55px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[361.553px_130.614px] mask-size-[1440px_567px] top-[-40.61px] w-[1987.288px]" data-node-id="2243:5479" style={{ maskImage: `url("${img25Ebbd6B2E0049DbB3B140F98147F4631}")` }} data-name="25ebbd6b-2e00-49db-b3b1-40f98147f463 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img25Ebbd6B2E0049DbB3B140F98147F4632} />
+        </div>
+      </div>
+      <div className="absolute h-[567px] left-0 opacity-60 top-[90px] w-[1063px]" data-node-id="2243:5433" style={{ backgroundImage: "linear-gradient(95.31181907456197deg, rgb(34, 34, 34) 13.218%, rgba(0, 0, 0, 0.64) 56.707%, rgba(0, 0, 0, 0) 81.549%)" }} />
+      <div className="absolute content-stretch flex flex-col gap-[32px] items-start left-[78px] top-[207px]" data-node-id="2242:5348">
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="2242:5349">
+          <p className="font-['Outfit:SemiBold'] font-semibold leading-[0] min-w-full relative shrink-0 text-[0px] text-[color:var(--brand\/colours\/white,white)] w-[min-content]" data-node-id="2242:5350">
+            <span className="leading-[1.2] text-[68px]">Freight Services</span>
+            <span className="leading-[1.2] text-[#0c969c] text-[68px]">.</span>
+          </p>
+          <p className="font-['Outfit:Medium'] font-medium leading-[1.2] relative shrink-0 text-[#ff914d] text-[24px] whitespace-nowrap" data-node-id="2242:5351">
+            Reliable transport solutions, wherever business takes you
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] text-white w-[537px]" data-node-id="2242:5352">
+            From urgent same-day collections to planned distribution, full loads and warehousing, PBL provides flexible freight solutions across the UK - backed by an experienced team and clear communication from start to finish.
+          </p>
+        </div>
+        <div className="border-2 border-[var(--brand\/colours\/white,white)] border-solid content-stretch flex h-[50px] items-center justify-center px-[16px] py-[10px] relative rounded-[50px] shrink-0" data-node-id="2242:5353" data-name="Buttons">
+          <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-center whitespace-nowrap" data-node-id="I2242:5353;231:785">
+            Get a Freight Quote
+          </p>
+        </div>
+      </div>
+      <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[78px] top-[3406px] w-[516px]" data-node-id="2250:6191">
+        <p className="font-['Outfit:SemiBold'] font-semibold leading-[0] relative shrink-0 text-[#353434] text-[48px] w-full" data-node-id="2250:6192">
+          <span className="leading-[1.2] text-white">Based in the Midlands</span>
+          <span className="leading-[1.2] text-[#0c969c]">{`. `}</span>
+          <span className="leading-[1.2] text-white">Delivering Nationwide</span>
+          <span className="leading-[1.2] text-[#ff914d]">.</span>
+        </p>
+        <p className="font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] text-white w-full" data-node-id="2250:6193">
+          Based in Birmingham, PBL provides reliable freight and logistics support across the UK. From local collections to urgent long-distance deliveries, our team offers nationwide coverage with clear communication throughout.
+        </p>
+      </div>
+      <div className="absolute flex inset-[16.74%_72.61%_78.58%_4.11%] items-center justify-center" data-node-id="2243:5492" style={{ containerType: "size" }}>
+        <div className="flex-none h-[hypot(19.5256cqw,46.642cqh)] rotate-[-27.72deg] skew-x-[0.12deg] w-[hypot(80.4744cqw,-53.358cqh)]">
+          <div className="relative size-full" data-name="Vector">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector1} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex gap-[30px] items-center left-[44px] py-[64px] top-[622px]" data-node-id="2250:6888">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="2250:6887">
+          <div className="col-1 flex h-[301.372px] items-center justify-center ml-[320.88px] mt-0 relative row-1 w-[332.12px]" data-node-id="2243:5496">
+            <div className="flex-none rotate-[155.84deg]">
+              <div className="h-[209.08px] relative w-[270.209px]" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector2} />
+              </div>
+            </div>
+          </div>
+          <div className="col-1 flex h-[310.926px] items-center justify-center ml-0 mt-[338.57px] relative row-1 w-[336.515px]" data-node-id="2275:3575">
+            <div className="flex-none rotate-[-27.78deg]">
+              <div className="h-[209.08px] relative w-[270.209px]" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector3} />
+              </div>
+            </div>
+          </div>
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[94px] mt-[114.54px] place-items-start relative row-1" data-node-id="2246:5824" data-name="Mask group">
+            <div className="col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[2px_24px] mask-size-[486px_429px] ml-[-2px] mt-[-24px] relative row-1 size-[494px]" data-node-id="2246:5821" style={{ maskImage: `url("${imgChatGptImageAug112026At121023Pm1}")` }} data-name="ChatGPT Image Aug 11, 2026 at 12_10_23 PM 1">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute left-[-11.91%] max-w-none size-[111.91%] top-[-11.91%]" src={imgChatGptImageAug112026At121023Pm2} />
+              </div>
+            </div>
+          </div>
+          <div className="col-1 flex h-[230.818px] items-center justify-center ml-[42.27px] mt-[418.3px] relative row-1 w-[294.246px]" data-node-id="2243:5494">
+            <div className="flex-none rotate-[-27.78deg]">
+              <div className="h-[118.588px] relative w-[270.107px]" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector4} />
+              </div>
+            </div>
+          </div>
+          <div className="col-1 flex h-[218.767px] items-center justify-center ml-[320.86px] mt-[0.37px] relative row-1 w-[294.983px]" data-node-id="2243:5497">
+            <div className="flex-none rotate-[155.84deg]">
+              <div className="h-[118.588px] relative w-[270.107px]" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector5} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[18px] items-start relative shrink-0 w-[635px]" data-node-id="2243:5483">
+          <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[#353434] text-[48px] w-full" data-node-id="2243:5484">
+            Transport Solutions Built Around Your Business
+          </p>
+          <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] text-black w-full" data-node-id="2250:6249">
+            No two transport requirements are the same. From urgent deliveries to planned distribution and additional capacity, PBL provides flexible, responsive freight solutions across the UK.
+          </p>
+          <div className="[word-break:break-word] gap-x-[20px] gap-y-[20px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] leading-[1.5] not-italic relative shrink-0 w-full" data-node-id="2250:6258">
+            <div className="col-1 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6252">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6251">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2243:5485">
+                Family-run business
+              </p>
+            </div>
+            <div className="col-2 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6253">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6254">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6255">
+                20+ years’ trading experience
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] gap-x-[20px] gap-y-[20px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] leading-[1.5] not-italic relative shrink-0 w-full" data-node-id="2250:6761">
+            <div className="col-1 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6762">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6763">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6764">
+                Nationwide coverage
+              </p>
+            </div>
+            <div className="col-2 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6765">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6766">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6767">
+                Dedicated customer support
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] gap-x-[20px] gap-y-[20px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] leading-[1.5] not-italic relative shrink-0 w-full" data-node-id="2250:6769">
+            <div className="col-1 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6770">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6771">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6772">
+                Reliable communication
+              </p>
+            </div>
+            <div className="col-2 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6773">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6774">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6775">
+                Live delivery updates
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] gap-x-[20px] gap-y-[20px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] leading-[1.5] not-italic relative shrink-0 w-full" data-node-id="2250:6777">
+            <div className="col-1 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6778">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6779">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6780">
+                Tailored transport solutions
+              </p>
+            </div>
+            <div className="col-2 content-stretch flex gap-[13px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2250:6781">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6782">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6783">
+                Experienced transport team
+              </p>
+            </div>
+          </div>
+          <div className="gap-x-[20px] gap-y-[20px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] relative shrink-0 w-full" data-node-id="2250:6785">
+            <div className="[word-break:break-word] col-1 content-stretch flex gap-[13px] items-start justify-self-stretch leading-[1.5] not-italic relative row-1 self-start shrink-0" data-node-id="2250:6786">
+              <p className="font-['Font_Awesome_7_Sharp:Solid'] relative shrink-0 text-[#0c969c] text-[20px] whitespace-nowrap" data-node-id="2250:6787">{`\uF00C`}</p>
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[16px] text-black" data-node-id="2250:6788">
+                Trusted by customers across multiple sectors
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[1436px] left-[-1px] top-[1343px] w-[1441px]" data-node-id="2348:1916">
+        <div className="absolute bg-[#0c969c] h-[1436px] left-0 opacity-94 top-0 w-[1441px]" data-node-id="2247:5838" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Outfit:SemiBold'] font-semibold leading-[1.2] left-[calc(50%+1px)] text-[48px] text-center text-white top-[97.54px] w-[635px]" data-node-id="2247:5839">
+          Our Freight Services
+        </p>
+        <div className="-translate-x-1/2 absolute bottom-[84.43%] left-[calc(50%+1px)] top-[12.71%] w-[359px]" data-node-id="2247:5848" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector6} />
+        </div>
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[79px] rounded-[28px] top-[275px] w-[636px]" data-node-id="2247:5831" />
+        <div className="absolute h-[69px] left-[122px] top-[327px] w-[104px]" data-node-id="2250:5956" data-name="_ò__2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgO2} />
+        </div>
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[728px] rounded-[28px] top-[275px] w-[636px]" data-node-id="2250:6793" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[243px] not-italic text-[16px] text-white top-[354px] w-[399px]" data-node-id="2250:6816">
+          Fast, reliable transport for urgent consignments across the UK.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold leading-[1.2] left-[243px] text-[24px] text-white top-[314px] whitespace-nowrap" data-node-id="2250:6817">
+          Same-Day Delivery
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[892px] not-italic text-[16px] text-white top-[354px] w-[399px]" data-node-id="2250:6836">
+          Responsive delivery solutions when timing really matters.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[892px] text-[24px] text-white top-[314px] w-[441px]" data-node-id="2250:6837">
+          Time-Critical Deliveries
+        </p>
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[79px] rounded-[28px] top-[470px] w-[636px]" data-node-id="2250:6839" />
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[728px] rounded-[28px] top-[470px] w-[636px]" data-node-id="2250:6859" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[243px] not-italic text-[16px] text-white top-[549px] w-[399px]" data-node-id="2250:6840">
+          Dependable next-day transport for planned deliveries and distribution.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold leading-[1.2] left-[243px] text-[24px] text-white top-[509px] whitespace-nowrap" data-node-id="2250:6841">
+          Next-Day Distribution
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[892px] text-[24px] text-white top-[509px] w-[469px]" data-node-id="2250:6861">
+          Nationwide Transport Solutions
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[892px] not-italic text-[16px] text-white top-[549px] w-[399px]" data-node-id="2250:6883">
+          Reliable freight coverage across the UK from our Midlands base.
+        </p>
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[79px] rounded-[28px] top-[665px] w-[636px]" data-node-id="2256:1692" />
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[728px] rounded-[28px] top-[665px] w-[636px]" data-node-id="2256:1710" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[243px] not-italic text-[16px] text-white top-[744px] w-[399px]" data-node-id="2256:1711">
+          A dedicated vehicle service tailored to your delivery requirements.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[40px] leading-[1.2] left-[243px] text-[24px] text-white top-[704px] w-[441px]" data-node-id="2256:1712">
+          Dedicated Vehicle Services
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[892px] not-italic text-[16px] text-white top-[744px] w-[399px]" data-node-id="2256:1713">
+          Extra transport capacity when demand increases or resources are stretched.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[892px] text-[24px] text-white top-[704px] w-[441px]" data-node-id="2256:1714">{`Subcontract & Overflow Support`}</p>
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[79px] rounded-[28px] top-[860px] w-[636px]" data-node-id="2256:1715" />
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[728px] rounded-[28px] top-[860px] w-[636px]" data-node-id="2256:1716" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[243px] not-italic text-[16px] text-white top-[939px] w-[399px]" data-node-id="2256:1717">
+          Flexible solutions for both full-load and part-load movements.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[243px] text-[24px] text-white top-[899px] w-[441px]" data-node-id="2256:1718">{`Full & Load Parts`}</p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[892px] text-[24px] text-white top-[899px] w-[469px]" data-node-id="2256:1719">{`Short & Long-Term Warehousing`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[892px] not-italic text-[16px] text-white top-[939px] w-[399px]" data-node-id="2256:1720">
+          Flexible warehousing for temporary or ongoing storage needs.
+        </p>
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[79px] rounded-[28px] top-[1055px] w-[636px]" data-node-id="2256:1722" />
+        <div className="absolute bg-[rgba(0,0,0,0.2)] h-[178px] left-[728px] rounded-[28px] top-[1055px] w-[636px]" data-node-id="2256:1723" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[243px] not-italic text-[16px] text-white top-[1134px] w-[399px]" data-node-id="2256:1724">
+          Professional transport for palletised goods from collection to delivery.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[243px] text-[24px] text-white top-[1094px] w-[441px]" data-node-id="2256:1725">
+          Palletised Freight
+        </p>
+        <p className="[word-break:break-word] absolute font-['Outfit:Bold'] font-bold h-[50px] leading-[1.2] left-[892px] text-[24px] text-white top-[1094px] w-[469px]" data-node-id="2256:1726">
+          Secure Storage Solutions
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.5] left-[892px] not-italic text-[16px] text-white top-[1134px] w-[399px]" data-node-id="2256:1727">
+          Safe, dependable storage for short or long-term requirements.
+        </p>
+        <div className="absolute h-[84px] left-[773px] top-[709px] w-[75px]" data-node-id="2250:6022" data-name="_ò__2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgO3} />
+        </div>
+        <div className="absolute inset-[63.37%_40.46%_31.55%_53.37%]" data-node-id="2250:6043" data-name="_ò__2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgO4} />
+        </div>
+        <div className="absolute h-[72px] left-[124px] top-[713px] w-[88px]" data-node-id="2250:5996" data-name="_ò__2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgO5} />
+        </div>
+        <div className="absolute h-[90px] left-[769px] top-[510px] w-[89px]" data-node-id="2256:1740" data-name="_ò__2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgO6} />
+        </div>
+        <div className="absolute h-[69px] left-[759px] top-[328px] w-[106px]" data-node-id="2257:1751" data-name="_ÎÓÈ_2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIoe2} />
+        </div>
+        <div className="absolute inset-[76.18%_85.77%_17.6%_8.88%]" data-node-id="2257:1796">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup4} />
+        </div>
+        <div className="absolute inset-[36.07%_85.98%_58.64%_8.81%]" data-node-id="2257:1810" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector7} />
+        </div>
+        <div className="absolute inset-[36.07%_87.79%_62.53%_10.62%]" data-node-id="2257:1811" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector8} />
+        </div>
+        <div className="absolute inset-[39.69%_89.59%_60.1%_9.3%]" data-node-id="2257:1812" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector9} />
+        </div>
+        <div className="absolute inset-[39.28%_89.59%_60.52%_9.3%]" data-node-id="2257:1813" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector9} />
+        </div>
+        <div className="absolute inset-[40.11%_89.59%_59.68%_9.3%]" data-node-id="2257:1814" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector9} />
+        </div>
+        <div className="absolute inset-[40.88%_85.91%_58.91%_12.21%]" data-node-id="2257:1815" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector10} />
+        </div>
+        <div className="absolute inset-[39.14%_84.94%_59.33%_13.46%]" data-node-id="2257:1816" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector11} />
+        </div>
+        <div className="absolute inset-[40.46%_85.15%_58.57%_13.88%]" data-node-id="2257:1817" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector12} />
+        </div>
+        <div className="absolute inset-[40.46%_87.93%_58.57%_11.17%]" data-node-id="2257:1818" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector13} />
+        </div>
+        <div className="absolute inset-[38.58%_86.33%_58.91%_10.9%]" data-node-id="2257:1819" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector14} />
+        </div>
+        <div className="absolute inset-[39.9%_85.36%_59.89%_13.12%]" data-node-id="2257:1820" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector15} />
+        </div>
+        <div className="absolute h-[81px] left-[773px] top-[1099px] w-[85px]" data-node-id="2257:1841" data-name="_ÎÓÈ_2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIoe3} />
+        </div>
+        <div className="absolute h-[78px] left-[121px] top-[902px] w-[93px]" data-node-id="2257:1873" data-name="_ÎÓÈ_2">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIoe4} />
+        </div>
+        <div className="-translate-x-1/2 absolute border-2 border-[var(--brand\/colours\/white,white)] border-solid content-stretch flex h-[50px] items-center justify-center left-1/2 px-[16px] py-[10px] rounded-[50px] top-[1270px] w-[217px]" data-node-id="2247:5853" data-name="Buttons">
+          <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-center whitespace-nowrap" data-node-id="I2247:5853;231:785">
+            Get a Freight Quote
+          </p>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--brand\/colours\/secondary,#0c969c)] content-stretch flex h-[50px] items-center justify-center left-[79px] min-w-[120px] px-[16px] py-[10px] rounded-[50px] top-[3687px]" data-node-id="2257:2887" data-name="Buttons">
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Outfit:SemiBold'] font-semibold leading-[1.2] min-w-px relative text-[16px] text-[color:var(--brand\/colours\/white,white)] text-center" data-node-id="I2257:2887;37:3901">
+          Contact Us Today
+        </p>
+      </div>
+      <div className="absolute contents inset-[57.83%_21.78%_31.94%_52.71%]" data-node-id="2262:3396">
+        <div className="absolute inset-[57.83%_21.78%_31.94%_52.71%]" data-node-id="2260:3235" data-name="Group">
+          <div className="absolute inset-[-5.16%_-8.17%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+          </div>
+        </div>
+        <div className="absolute inset-[65.17%_33.06%_34.18%_63.67%]" data-node-id="2260:3325" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector16} />
+        </div>
+        <div className="absolute inset-[65.31%_26.87%_33.83%_70.77%]" data-node-id="2260:3326" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector17} />
+        </div>
+        <div className="absolute inset-[63.27%_34.48%_35.56%_58.75%]" data-node-id="2260:3327" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector18} />
+        </div>
+        <div className="absolute inset-[65.09%_23.6%_33.25%_73.23%]" data-node-id="2260:3328" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector19} />
+        </div>
+        <div className="absolute inset-[65.57%_31.38%_32.8%_63.93%]" data-node-id="2260:3329" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector20} />
+        </div>
+        <div className="absolute inset-[61.84%_31.96%_35.8%_62.94%]" data-node-id="2260:3330" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector21} />
+        </div>
+        <div className="absolute inset-[63.46%_28.48%_35.89%_69.45%]" data-node-id="2260:3331" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector22} />
+        </div>
+        <div className="absolute inset-[64.2%_27.25%_34.5%_65.05%]" data-node-id="2260:3332" data-name="Rectangle">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgRectangle} />
+          </div>
+        </div>
+        <div className="absolute inset-[65%_24.53%_33.6%_72.59%]" data-node-id="2260:3333" data-name="Vector">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector23} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute bg-white content-stretch flex flex-col items-center justify-center left-1/2 overflow-clip py-[80px] top-[2756px] w-[1440px]" data-node-id="2250:6197" data-name="Testimonials">
+        <div className="content-stretch flex items-start px-[64px] py-[52px] relative rounded-[20px] shrink-0 w-[1280px]" data-node-id="I2250:6197;285:1242" style={{ backgroundImage: "linear-gradient(167.7766661460257deg, rgb(216, 82, 0) 12.616%, rgb(231, 101, 20) 69.329%)" }} data-name="Testimonial Card 2">
+          <div className="content-stretch flex flex-[1_0_0] gap-[32px] items-center justify-center min-w-px relative" data-node-id="I2250:6197;285:1262" data-name="Products Slider">
+            <div className="content-stretch flex flex-col gap-[28px] items-start relative shrink-0 w-[400px]" data-node-id="I2250:6197;285:1263">
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[12px] items-start relative shrink-0 text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2250:6197;285:1310">
+                <p className="font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[40px] w-full" data-node-id="I2250:6197;285:1264">
+                  Happy Customers
+                </p>
+                <p className="font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] w-full" data-node-id="I2250:6197;285:1265">
+                  Our customers rely on PBL for responsive, dependable transport and straightforward communication. Here’s what a few of them have had to say about working with us.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row items-center self-stretch" data-node-id="I2250:6197;285:1305">
+              <div className="h-full relative shrink-0 w-0">
+                <div className="absolute inset-[0_-0.5px]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector24} />
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[32px] items-start min-w-px relative" data-node-id="I2250:6197;285:1286">
+              <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-node-id="I2250:6197;285:1287">
+                <div className="h-[40px] relative shrink-0 w-[216px]" data-node-id="I2250:6197;285:1288">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame360} />
+                </div>
+                <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full" data-node-id="I2250:6197;285:1294">
+                  <p className="[word-break:break-word] font-['Outfit:Medium'] font-medium leading-[1.2] relative shrink-0 text-[24px] text-white w-full" data-node-id="I2250:6197;285:1295">
+                    {`“Job's quoted within mins, Fast collection and ETA to sites`}
+                    <br aria-hidden />
+                    spot-on. friendly, reliable and easy to work with.”
+                  </p>
+                  <div className="content-stretch flex gap-[6px] items-start relative shrink-0 w-full" data-node-id="I2250:6197;285:1296">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px not-italic relative text-[16px] text-[color:var(--brand\/colours\/white,white)]" data-node-id="I2250:6197;285:1298">
+                      Michelle Hall
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[6px] items-start relative shrink-0" data-node-id="I2250:6197;285:1299">
+                <CircleArrows className="bg-[var(--brand\/colours\/white,white)] relative rounded-[80px] shrink-0 size-[40px]" />
+                <CircleArrows className="bg-[var(--brand\/colours\/white,white)] relative rounded-[80px] shrink-0 size-[40px]" property1="Right" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[1162px] left-[-16px] top-[3940px] w-[1457px]" data-node-id="2250:6226" style={{ backgroundImage: "linear-gradient(146.49066351320596deg, rgb(216, 82, 0) 12.616%, rgb(231, 101, 20) 69.329%)" }} />
+      <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[46px] items-center left-1/2 px-[180px] top-[4036px] w-[1280px]" data-node-id="2275:3353">
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 text-center text-white w-full" data-node-id="2275:3354">
+          <p className="font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[48px] w-full" data-node-id="2275:3355">
+            Get a Quote
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] w-full" data-node-id="2275:3356">
+            Based in Birmingham, PBL provides reliable freight and logistics support across the UK. From local collections to urgent long-distance deliveries, our team offers nationwide coverage with clear communication throughout.
+          </p>
+        </div>
+        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(8,fit-content(100%))] relative shrink-0 w-full" data-node-id="2275:3357">
+          <div className="col-1 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2275:3358" data-name="Form/Text Input">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3358;37:3208">
+              Full Name
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3358;37:3209">
+              <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] whitespace-nowrap" data-node-id="I2275:3358;37:3210">
+                <p className="leading-[1.5]">Enter Full Name</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-2 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-1 self-start shrink-0" data-node-id="2275:3359" data-name="Form/Text Input">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3359;37:3208">
+              Company Name
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3359;37:3209">
+              <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] whitespace-nowrap" data-node-id="I2275:3359;37:3210">
+                <p className="leading-[1.5]">Enter Company Name</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-1 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-2 self-start shrink-0" data-node-id="2275:3360" data-name="Form/Text Input">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3360;37:3208">
+              Contact Number
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3360;37:3209">
+              <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] whitespace-nowrap" data-node-id="I2275:3360;37:3210">
+                <p className="leading-[1.5]">Enter Phone Number</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-2 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-2 self-start shrink-0" data-node-id="2275:3361" data-name="Form/Text Input">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3361;37:3208">
+              Email Address
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3361;37:3209">
+              <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] whitespace-nowrap" data-node-id="I2275:3361;37:3210">
+                <p className="leading-[1.5]">Enter Email Address</p>
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] col-[1/span_2] content-stretch flex flex-col gap-[8px] items-start justify-self-stretch not-italic relative row-3 self-start shrink-0" data-node-id="2343:3283" data-name="Form/Select Input">
+            <p className="font-['Inter:Medium'] font-medium leading-[1.2] relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="2343:3284">
+              Freight Service Required
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex gap-[10px] items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] w-full" data-node-id="2343:3285">
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px relative" data-node-id="2343:3286">
+                Please Select
+              </p>
+              <p className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] font-['Font_Awesome_7_Pro:Regular'] leading-[normal] relative shrink-0 text-right whitespace-nowrap" data-node-id="2343:3287">
+                chevron-down
+              </p>
+            </div>
+          </div>
+          <div className="col-1 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-4 self-start shrink-0" data-node-id="2275:3362" data-name="Form/Text Input">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3362;37:3208">
+              Collection Postcode
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3362;37:3209">
+              <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] whitespace-nowrap" data-node-id="I2275:3362;37:3210">
+                <p className="leading-[1.5]">Enter Collection Postcode</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-2 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-4 self-start shrink-0" data-node-id="2275:3363" data-name="Form/Text Input">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3363;37:3208">
+              Delivery Postcode
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3363;37:3209">
+              <div className="[word-break:break-word] flex flex-col font-['Inter:Regular'] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] whitespace-nowrap" data-node-id="I2275:3363;37:3210">
+                <p className="leading-[1.5]">Enter Delivery Postcode</p>
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] col-1 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch not-italic relative row-5 self-start shrink-0" data-node-id="2275:3364" data-name="Form/Date Select Input">
+            <p className="font-['Inter:Medium'] font-medium leading-[1.2] relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3364;309:2187">
+              Required Date
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex gap-[10px] items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] w-full" data-node-id="I2275:3364;309:2188">
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px relative" data-node-id="I2275:3364;309:2189">
+                DD/MM/YYYY
+              </p>
+              <p className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] font-['Font_Awesome_6_Pro:Regular'] leading-[normal] relative shrink-0 text-right whitespace-nowrap" data-node-id="I2275:3364;309:2190">
+                calendar-alt
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] col-2 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch not-italic relative row-5 self-start shrink-0" data-node-id="2275:3365" data-name="Form/Select Input">
+            <p className="font-['Inter:Medium'] font-medium leading-[1.2] relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="2275:3366">
+              Load Type
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex gap-[10px] items-center px-[20px] py-[16px] relative rounded-[6px] shrink-0 text-[16px] text-[color:var(--brand\/colours\/black,#222)] w-full" data-node-id="2275:3367">
+              <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px relative" data-node-id="2275:3368">
+                Please Select
+              </p>
+              <p className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] font-['Font_Awesome_7_Pro:Regular'] leading-[normal] relative shrink-0 text-right whitespace-nowrap" data-node-id="2275:3369">
+                chevron-down
+              </p>
+            </div>
+          </div>
+          <div className="col-[1/span_2] content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-6 self-start shrink-0" data-node-id="2275:3370" data-name="Form/Text Area">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.2] not-italic relative shrink-0 text-[12px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2275:3370;309:2135">
+              Tell us about your requirements
+            </p>
+            <div className="bg-[var(--brand\/colours\/white,white)] border border-[var(--brand\/colours\/grey,#d9d9d9)] border-solid content-stretch flex h-[140px] items-start px-[20px] py-[16px] relative rounded-[6px] shrink-0 w-full" data-node-id="I2275:3370;309:2136">
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px not-italic relative text-[16px] text-[color:var(--brand\/colours\/black,#222)]" data-node-id="I2275:3370;309:2137">
+                Type your message
+              </p>
+            </div>
+          </div>
+          <div className="col-[1/span_2] content-stretch flex gap-[12px] items-center justify-self-stretch relative row-7 self-start shrink-0" data-node-id="2275:3371" data-name="Form/Checkbox-text">
+            <FormCheckbox className="content-stretch flex items-center relative shrink-0" />
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-center whitespace-nowrap" data-node-id="I2275:3371;337:1708">
+              I agree to PBL (UK) Ltd using my details to respond to this enquiry, in accordance with the Privacy Policy.
+            </p>
+          </div>
+          <div className="col-[1/span_2] content-stretch flex flex-col items-end justify-self-stretch relative row-8 self-start shrink-0" data-node-id="2275:3372">
+            <div className="border-2 border-[var(--brand\/colours\/white,white)] border-solid content-stretch flex h-[50px] items-center justify-center min-w-[120px] px-[16px] py-[10px] relative rounded-[50px] shrink-0" data-node-id="2275:3373" data-name="Buttons">
+              <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-center whitespace-nowrap" data-node-id="I2275:3373;231:785">{`Submit `}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute bg-[var(--brand\/colours\/black,#222)] bottom-[-0.01px] content-stretch flex flex-col items-start left-1/2 px-[80px] py-[60px] w-[1440px]" data-node-id="2386:3685" data-name="Footer/Style 2">
+        <div className="content-stretch flex flex-col gap-[52px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:877" data-name="Footer Wrapper">
+          <div className="content-stretch flex gap-[100px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:879" data-name="Footer Top">
+            <div className="content-stretch flex flex-col gap-[16px] items-start relative self-stretch shrink-0 w-[331px]" data-node-id="I2386:3685;88:880" data-name="Intro">
+              <a className="block cursor-pointer h-[118.01px] relative shrink-0 w-[183.99px]" data-node-id="I2386:3685;88:881" data-name="Footer/Links List">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFooterLinksList} />
+              </a>
+              <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:883">
+                <div className="[word-break:break-word] content-stretch flex flex-col gap-[10px] items-start relative shrink-0 text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2386:3685;88:884">
+                  <p className="font-['Outfit:Medium'] font-medium leading-[1.2] relative shrink-0 text-[20px] w-full" data-node-id="I2386:3685;88:885">
+                    {`Keeping goods, people &`}
+                    <br aria-hidden />
+                    businesses moving.
+                  </p>
+                  <p className="font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[16px] w-full" data-node-id="I2386:3685;88:886">
+                    Reliable nationwide freight services and professional CPC training from an experienced, family-run Birmingham team.
+                  </p>
+                </div>
+                <div className="bg-[var(--brand\/colours\/secondary,#0c969c)] content-stretch flex h-[50px] items-center justify-center min-w-[120px] px-[16px] py-[10px] relative rounded-[50px] shrink-0" data-node-id="I2386:3685;246:919" data-name="Buttons">
+                  <p className="[word-break:break-word] font-['Outfit:SemiBold'] font-semibold leading-[1.2] relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] text-center whitespace-nowrap" data-node-id="I2386:3685;246:919;228:1726">
+                    Get In Touch
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] gap-[38px] items-start min-w-px relative" data-node-id="I2386:3685;88:888" data-name="Menus">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[20px] items-start min-w-px relative" data-node-id="I2386:3685;88:889" data-name="Column 1">
+                <p className="[word-break:break-word] font-['Outfit:Medium'] font-medium leading-[1.2] relative shrink-0 text-[20px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2386:3685;88:890">
+                  Quicklinks
+                </p>
+                <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:891">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:892">
+                    <div className="content-stretch flex items-center py-[6px] relative shrink-0 w-full" data-node-id="I2386:3685;88:893" data-name="Footer Links">
+                      <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px not-italic relative text-[16px] text-[color:var(--brand\/colours\/white,white)]" data-node-id="I2386:3685;88:893;83:1037">
+                        Freight Services
+                      </p>
+                    </div>
+                  </div>
+                  <a className="content-stretch cursor-pointer flex flex-col items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:894">
+                    <div className="content-stretch flex items-center py-[6px] relative shrink-0 w-full" data-node-id="I2386:3685;88:895" data-name="Footer Links">
+                      <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px not-italic relative text-[16px] text-[color:var(--brand\/colours\/white,white)] text-left" data-node-id="I2386:3685;88:895;83:1037">
+                        CPC Training
+                      </p>
+                    </div>
+                  </a>
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:898">
+                    <a className="content-stretch cursor-pointer flex items-center py-[6px] relative shrink-0 w-full" data-node-id="I2386:3685;88:899" data-name="Footer Links">
+                      <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-w-px not-italic relative text-[16px] text-[color:var(--brand\/colours\/white,white)] text-left" data-node-id="I2386:3685;88:899;83:1037">
+                        Contact Us
+                      </p>
+                    </a>
+                  </div>
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:900">
+                    <div className="content-stretch flex h-[36px] items-center py-[6px] relative shrink-0 w-full" data-node-id="I2386:3685;88:901" data-name="Footer Links" />
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[20px] items-start min-w-px relative" data-node-id="I2386:3685;88:917" data-name="Column 3">
+                <p className="[word-break:break-word] font-['Outfit:Medium'] font-medium leading-[1.2] min-w-full relative shrink-0 text-[20px] text-[color:var(--brand\/colours\/white,white)] w-[min-content]" data-node-id="I2386:3685;88:918">
+                  See how we can help
+                </p>
+                <div className="[word-break:break-word] content-stretch flex flex-col gap-[24px] items-start leading-[1.5] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2386:3685;88:919">
+                  <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:920">
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:921">
+                      Call us on
+                    </p>
+                    <p className="font-['Inter:Bold'] font-bold min-w-full relative shrink-0 w-[min-content]" data-node-id="I2386:3685;88:922">
+                      +44 (0)121 270 7264
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:923">
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:924">
+                      Drop us an email
+                    </p>
+                    <p className="font-['Inter:Bold'] font-bold min-w-full relative shrink-0 w-[min-content]" data-node-id="I2386:3685;88:925">
+                      ops@pblukltd.co.uk
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="I2386:3685;88:926">
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:927">
+                      Where to find us
+                    </p>
+                    <p className="font-['Inter:Bold'] font-bold min-w-full relative shrink-0 w-[min-content]" data-node-id="I2386:3685;88:928">
+                      PBL (UK) LTD, Unit K43 Hastingwood Industrial Park, Wood Lane, Birmingham, B24 9QR
+                    </p>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[6px] items-start relative shrink-0" data-node-id="I2386:3685;88:929">
+                  <SocialIcons className="relative shrink-0 size-[36px]" />
+                  <div className="relative shrink-0 size-[36px]" data-node-id="I2386:3685;88:931" data-name="Social Icons">
+                    <div className="absolute inset-[6.25%]" data-node-id="I2386:3685;88:931;83:1042">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse46} />
+                    </div>
+                    <p className="[word-break:break-word] absolute bottom-[28.13%] font-['Font_Awesome_6_Brands:Regular'] leading-[17px] left-[37.5%] not-italic right-[37.5%] text-[14px] text-[color:var(--brand\/colours\/white,white)] text-center top-1/4" data-node-id="I2386:3685;88:931;83:1043">
+                      instagram
+                    </p>
+                  </div>
+                  <div className="relative shrink-0 size-[36px]" data-node-id="I2386:3685;88:932" data-name="Social Icons">
+                    <div className="absolute inset-[6.25%]" data-node-id="I2386:3685;88:932;83:1042">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse46} />
+                    </div>
+                    <p className="[word-break:break-word] absolute bottom-[28.13%] font-['Font_Awesome_6_Brands:Regular'] leading-[17px] left-[37.5%] not-italic right-[37.5%] text-[14px] text-[color:var(--brand\/colours\/white,white)] text-center top-1/4" data-node-id="I2386:3685;88:932;83:1043">
+                      linkedin-in
+                    </p>
+                  </div>
+                  <div className="relative shrink-0 size-[36px]" data-node-id="I2386:3685;88:933" data-name="Social Icons">
+                    <div className="absolute inset-[6.25%]" data-node-id="I2386:3685;88:933;83:1042">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse46} />
+                    </div>
+                    <p className="[word-break:break-word] absolute bottom-[28.13%] font-['Font_Awesome_6_Brands:Regular'] leading-[17px] left-[37.5%] not-italic right-[37.5%] text-[14px] text-[color:var(--brand\/colours\/white,white)] text-center top-1/4" data-node-id="I2386:3685;88:933;83:1043">
+                      youtube
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-0 relative shrink-0 w-[1280px]" data-node-id="I2386:3685;88:934" data-name="Seperator">
+            <div className="absolute inset-[-1px_0_0_0]">
+              <img alt="" className="block max-w-none size-full" src={imgSeperator} />
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex font-['Inter:Regular'] font-normal gap-[32px] h-[20px] items-center justify-end leading-[1.5] not-italic relative shrink-0 text-[16px] text-[color:var(--brand\/colours\/white,white)] w-full" data-node-id="I2386:3685;88:935" data-name="Bottom Bar">
+            <p className="flex-[1_0_0] min-w-px relative" data-node-id="I2386:3685;88:936">
+              PBK (UK) LTD. All rights reserved.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:937">
+              Privacy Policy
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:938">{`Terms & Conditions`}</p>
+            <p className="relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:939">
+              Customer Feedback
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" data-node-id="I2386:3685;88:940">
+              Web Design
+            </p>
+          </div>
+        </div>
+      </div>
+      <Header className="absolute bottom-0 h-[5680px] left-0 pointer-events-none top-0" show1stLogo={false} show3rdLogo={false} />
+    </div>
+  );
+}
+
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+
+These styles are contained in the design: Titles/H1: Font(family: "Outfit", style: SemiBold, size: 68, weight: 600, lineHeight: 1.2000000476837158, letterSpacing: 0), Titles/H5: Font(family: "Outfit", style: Medium, size: 24, weight: 500, lineHeight: 1.2000000476837158, letterSpacing: 0), Body/Body: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.5, letterSpacing: 0), Buttons: Font(family: "Outfit", style: SemiBold, size: 16, weight: 600, lineHeight: 1.2000000476837158, letterSpacing: 0), Titles/H2: Font(family: "Outfit", style: SemiBold, size: 48, weight: 600, lineHeight: 1.2000000476837158, letterSpacing: 0), Titles/H3: Font(family: "Outfit", style: SemiBold, size: 40, weight: 600, lineHeight: 1.2000000476837158, letterSpacing: 0), GRADIENT: , Body/Small Body: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 1.2000000476837158, letterSpacing: 0), Titles/H6: Font(family: "Outfit", style: Medium, size: 20, weight: 500, lineHeight: 1.2000000476837158, letterSpacing: 0).
+
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

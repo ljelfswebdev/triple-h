@@ -1,0 +1,264 @@
+:root {
+  --reveal-distance: 24px;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-motion-ready .motion-reveal {
+  --motion-x: 0px;
+  --motion-y: 0px;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translate3d(var(--motion-x), var(--motion-y), 0);
+  transition:
+    opacity 700ms var(--reveal-easing),
+    filter 700ms var(--reveal-easing),
+    transform 700ms var(--reveal-easing),
+    clip-path 900ms var(--reveal-easing);
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, filter, transform;
+}
+
+.site-motion-ready .motion-reveal--left { --motion-x: -34px; }
+.site-motion-ready .motion-reveal--right { --motion-x: 34px; }
+.site-motion-ready .motion-reveal--up { --motion-y: 28px; }
+.site-motion-ready .motion-reveal--fade { transform: none; }
+.site-motion-ready .motion-reveal--clip {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  clip-path: inset(0 100% 0 0);
+}
+
+.site-motion-ready .motion-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.site-motion-ready .motion-reveal--clip.is-visible { clip-path: inset(0 0 0 0); }
+
+.th-hero__content > .eyebrow,
+.page-hero__inner > .eyebrow { animation: triple-h-copy-in 680ms var(--reveal-easing) 120ms both; }
+.th-hero__content > h1,
+.page-hero__inner > h1 { animation: triple-h-copy-in 820ms var(--reveal-easing) 220ms both; }
+.th-hero__content > .th-hero__lede,
+.page-hero__inner > .page-hero__text { animation: triple-h-copy-in 760ms var(--reveal-easing) 360ms both; }
+.th-hero__content > .button-row { animation: triple-h-copy-in 700ms var(--reveal-easing) 470ms both; }
+.th-hero__rail span { animation: triple-h-rail-in 620ms var(--reveal-easing) both; }
+.th-hero__rail span:nth-child(1) { animation-delay: 520ms; }
+.th-hero__rail span:nth-child(2) { animation-delay: 590ms; }
+.th-hero__rail span:nth-child(3) { animation-delay: 660ms; }
+.th-hero__rail span:nth-child(4) { animation-delay: 730ms; }
+
+.th-header .btn,
+main .btn,
+.th-footer .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.th-header .btn::after,
+main .btn::after,
+.th-footer .btn::after {
+  position: absolute;
+  inset: -70% auto -70% -45%;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 42%), transparent);
+  content: "";
+  pointer-events: none;
+  transform: skewX(-20deg) translateX(-220%);
+  transition: transform 620ms var(--reveal-easing);
+}
+
+.th-header .btn:hover::after,
+main .btn:hover::after,
+.th-footer .btn:hover::after { transform: skewX(-20deg) translateX(620%); }
+
+.reveal,
+.reveal-stagger {
+  --reveal-x: 0px;
+  --reveal-y: 0px;
+}
+
+.reveal--left,
+.reveal-stagger--left {
+  --reveal-x: calc(var(--reveal-distance) * -1);
+}
+
+.reveal--right,
+.reveal-stagger--right {
+  --reveal-x: var(--reveal-distance);
+}
+
+.reveal--up,
+.reveal-stagger--up {
+  --reveal-y: var(--reveal-distance);
+}
+
+.reveal[data-reveal-state="pending"],
+.reveal-stagger[data-reveal-state="pending"] .reveal-stagger__item {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x), var(--reveal-y), 0);
+}
+
+.reveal[data-reveal-state],
+.reveal-stagger[data-reveal-state] .reveal-stagger__item {
+  transition-property: opacity, transform;
+  transition-duration: var(--reveal-duration, 600ms);
+  transition-timing-function: var(--reveal-easing);
+}
+
+.reveal[data-reveal-state="visible"],
+.reveal-stagger[data-reveal-state="visible"] .reveal-stagger__item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal[data-reveal-state="visible"] {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-stagger[data-reveal-state="visible"] .reveal-stagger__item {
+  transition-delay: var(--reveal-item-delay, 0ms);
+}
+
+.hero-motion__content {
+  animation: hero-content-in 650ms var(--reveal-easing) both;
+}
+
+.hero-motion__badge {
+  animation: hero-fade-in 600ms var(--reveal-easing) 220ms both;
+}
+
+.hero-motion__background {
+  animation: hero-background-drift 8s cubic-bezier(0.2, 0.7, 0.2, 1) 250ms
+    both;
+}
+
+@supports (animation-timeline: view()) {
+  .homepage-parallax__background {
+    animation: homepage-parallax linear both;
+    animation-range: entry 0% exit 100%;
+    animation-timeline: view();
+  }
+}
+
+@keyframes hero-content-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes triple-h-copy-in {
+  from { opacity: 0; filter: blur(5px); transform: translate3d(-34px, 0, 0); }
+  to { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0); }
+}
+
+@keyframes triple-h-rail-in {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-background-drift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.04) translate3d(0.6%, -0.6%, 0);
+  }
+}
+
+@keyframes homepage-parallax {
+  from {
+    transform: translate3d(0, -160px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 160px, 0);
+  }
+}
+
+@keyframes cookie-consent-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes cookie-consent-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --reveal-distance: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-motion-ready .motion-reveal {
+    --motion-x: 0px;
+    --motion-y: 18px;
+    filter: none;
+    transition-duration: 520ms;
+  }
+
+  .site-motion-ready .motion-reveal--fade,
+  .site-motion-ready .motion-reveal--clip { --motion-y: 0px; }
+}
+
+/* Keep the mobile hero visible at first paint and avoid a full-screen
+   animated layer competing with loading and interaction on phones. */
+@media (max-width: 700px) {
+  .hero-motion__content,
+  .hero-motion__badge,
+  .hero-motion__background,
+  .homepage-parallax__background {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger__item,
+  .hero-motion__content,
+  .hero-motion__badge,
+  .hero-motion__background,
+  .homepage-parallax__background {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .motion-reveal,
+  .th-hero__content > *,
+  .page-hero__inner > *,
+  .th-hero__rail span {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}

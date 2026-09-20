@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#090909"/>
+  <text
+    x="32"
+    y="50"
+    fill="#ef101c"
+    stroke="#ffffff"
+    stroke-width="3"
+    paint-order="stroke fill"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="52"
+    font-weight="900"
+  >H</text>
+</svg>

@@ -1,0 +1,48 @@
+/* Opt-in Swiper overrides belong here when sliders are introduced. */
+/* Shared controls for CMS page-builder galleries. */
+.builder-gallery__swiper {
+  --swiper-theme-color: var(--color-primary);
+  --swiper-navigation-size: 22px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--color-black);
+}
+
+.builder-gallery__swiper .swiper-button-prev,
+.builder-gallery__swiper .swiper-button-next {
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50%;
+  color: var(--color-white);
+  background: rgb(0 0 0 / 70%);
+  backdrop-filter: blur(8px);
+}
+
+.builder-gallery__swiper .swiper-button-prev svg,
+.builder-gallery__swiper .swiper-button-next svg {
+  width: 18px;
+  height: 18px;
+}
+
+.builder-gallery__swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: .6;
+  background: var(--color-white);
+}
+
+.builder-gallery__swiper .swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 10px;
+  opacity: 1;
+  background: var(--color-primary);
+}
+
+@media (max-width: 700px) {
+  .builder-gallery__swiper .swiper-button-prev,
+  .builder-gallery__swiper .swiper-button-next { width: 40px; height: 40px; margin-top: -20px; }
+  .builder-gallery__swiper .swiper-button-prev svg,
+  .builder-gallery__swiper .swiper-button-next svg { width: 15px; height: 15px; }
+}

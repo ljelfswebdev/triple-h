@@ -1,0 +1,23 @@
+{
+  "extends": "./jsconfig.json",
+  "compilerOptions": {
+    "checkJs": true,
+    "lib": ["dom", "es2022"],
+    "noEmit": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "types": []
+  },
+  "include": [
+    "src/lib/admin-users.js",
+    "src/lib/form-messages.js",
+    "src/lib/form-validation.js",
+    "src/lib/media-upload.js",
+    "src/lib/request-security.js",
+    "src/lib/security.js",
+    "src/lib/site-url.js",
+    "src/lib/testimonials.js",
+    "types/check-js.d.ts"
+  ],
+  "exclude": ["node_modules", ".next"]
+}

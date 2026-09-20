@@ -1,0 +1,544 @@
+{
+  "source": {
+    "fileKey": "u04EfuauE5NRpIju9CiKTo",
+    "nodeId": "2242:4936",
+    "extracted": "2026-08-28"
+  },
+  "page": {
+    "slug": "freight-services",
+    "title": "Freight Services",
+    "content": {
+      "banner": {
+        "title": "<p>Freight Services<span class=\"freight-accent-teal\">.</span></p>",
+        "subtitle": "<p>Reliable transport solutions, wherever business takes you</p>",
+        "text": "<p>From urgent same-day collections to planned distribution, full loads and warehousing, PBL provides flexible freight solutions across the UK - backed by an experienced team and clear communication from start to finish.</p>",
+        "link": {
+          "label": "Get a Freight Quote",
+          "url": "#quote",
+          "newTab": false
+        },
+        "image": {
+          "url": "/images/freight-services/hero.png",
+          "alt": "PBL freight truck on the road"
+        }
+      },
+      "about": {
+        "image": {
+          "url": "/images/freight-services/about-illustration.png",
+          "alt": "PBL team loading a freight vehicle at the depot"
+        },
+        "title": "<p>Transport Solutions Built Around Your Business</p>",
+        "text": "<p>No two transport requirements are the same. From urgent deliveries to planned distribution and additional capacity, PBL provides flexible, responsive freight solutions across the UK.</p>",
+        "items": [
+          {
+            "text": "<p>Family-run business</p>"
+          },
+          {
+            "text": "<p>20+ years’ trading experience</p>"
+          },
+          {
+            "text": "<p>Nationwide coverage</p>"
+          },
+          {
+            "text": "<p>Dedicated customer support</p>"
+          },
+          {
+            "text": "<p>Reliable communication</p>"
+          },
+          {
+            "text": "<p>Live delivery updates</p>"
+          },
+          {
+            "text": "<p>Tailored transport solutions</p>"
+          },
+          {
+            "text": "<p>Experienced transport team</p>"
+          },
+          {
+            "text": "<p>Trusted by customers across multiple sectors</p>"
+          }
+        ]
+      },
+    "services": {
+      "title": "<p>Our Freight Services</p>",
+      "decoration": {
+        "url": "/images/freight-services/imgVector6.svg",
+        "alt": ""
+      },
+        "link": {
+          "label": "Get a Freight Quote",
+          "url": "#quote",
+          "newTab": false
+        },
+        "items": [
+          {
+            "key": "same-day-delivery",
+            "title": "<p>Same-Day Delivery</p>",
+            "text": "<p>Fast, reliable transport for urgent consignments across the UK.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgO2.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "time-critical-deliveries",
+            "title": "<p>Time-Critical Deliveries</p>",
+            "text": "<p>Responsive delivery solutions when timing really matters.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgIoe2.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "next-day-distribution",
+            "title": "<p>Next-Day Distribution</p>",
+            "text": "<p>Dependable next-day transport for planned deliveries and distribution.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgVector7.svg",
+              "alt": "",
+              "layers": [
+                {
+                  "url": "/images/freight-services/imgVector7.svg",
+                  "x": 0,
+                  "y": 0,
+                  "width": 75,
+                  "height": 76
+                },
+                {
+                  "url": "/images/freight-services/imgVector8.svg",
+                  "x": 26,
+                  "y": 0,
+                  "width": 23,
+                  "height": 20
+                },
+                {
+                  "url": "/images/freight-services/imgVector9.svg",
+                  "x": 7,
+                  "y": 52,
+                  "width": 16,
+                  "height": 3
+                },
+                {
+                  "url": "/images/freight-services/imgVector9.svg",
+                  "x": 7,
+                  "y": 46,
+                  "width": 16,
+                  "height": 3
+                },
+                {
+                  "url": "/images/freight-services/imgVector9.svg",
+                  "x": 7,
+                  "y": 58,
+                  "width": 16,
+                  "height": 3
+                },
+                {
+                  "url": "/images/freight-services/imgVector10.svg",
+                  "x": 49,
+                  "y": 69,
+                  "width": 27,
+                  "height": 3
+                },
+                {
+                  "url": "/images/freight-services/imgVector11.svg",
+                  "x": 67,
+                  "y": 44,
+                  "width": 23,
+                  "height": 22
+                },
+                {
+                  "url": "/images/freight-services/imgVector12.svg",
+                  "x": 73,
+                  "y": 63,
+                  "width": 14,
+                  "height": 14
+                },
+                {
+                  "url": "/images/freight-services/imgVector13.svg",
+                  "x": 34,
+                  "y": 63,
+                  "width": 13,
+                  "height": 14
+                },
+                {
+                  "url": "/images/freight-services/imgVector14.svg",
+                  "x": 30,
+                  "y": 36,
+                  "width": 40,
+                  "height": 36
+                },
+                {
+                  "url": "/images/freight-services/imgVector15.svg",
+                  "x": 62,
+                  "y": 55,
+                  "width": 22,
+                  "height": 3
+                }
+              ]
+            }
+          },
+          {
+            "key": "nationwide-transport-solutions",
+            "title": "<p>Nationwide Transport Solutions</p>",
+            "text": "<p>Reliable freight coverage across the UK from our Midlands base.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgO6.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "dedicated-vehicle-services",
+            "title": "<p>Dedicated Vehicle Services</p>",
+            "text": "<p>A dedicated vehicle service tailored to your delivery requirements.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgO5.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "subcontract-overflow-support",
+            "title": "<p>Subcontract &amp; Overflow Support</p>",
+            "text": "<p>Extra transport capacity when demand increases or resources are stretched.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgO3.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "full-part-loads",
+            "title": "<p>Full &amp; Load Parts</p>",
+            "text": "<p>Flexible solutions for both full-load and part-load movements.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgIoe4.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "warehousing",
+            "title": "<p>Short &amp; Long-Term Warehousing</p>",
+            "text": "<p>Flexible warehousing for temporary or ongoing storage needs.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgO4.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "palletised-freight",
+            "title": "<p>Palletised Freight</p>",
+            "text": "<p>Professional transport for palletised goods from collection to delivery.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgGroup4.svg",
+              "alt": ""
+            }
+          },
+          {
+            "key": "secure-storage",
+            "title": "<p>Secure Storage Solutions</p>",
+            "text": "<p>Safe, dependable storage for short or long-term requirements.</p>",
+            "icon": {
+              "url": "/images/freight-services/imgIoe3.svg",
+              "alt": ""
+            }
+          }
+        ]
+      },
+      "testimonials": {
+        "title": "<p>Happy Customers</p>",
+        "text": "<p>Our customers rely on PBL for responsive, dependable transport and straightforward communication. Here’s what a few of them have had to say about working with us.</p>",
+        "featuredName": "Michelle Hall"
+      },
+      "maps": {
+        "title": "<p>Based in the Midlands<span class=\"freight-accent-teal\">.</span><br>Delivering Nationwide<span class=\"freight-accent-orange\">.</span></p>",
+        "text": "<p>Based in Birmingham, PBL provides reliable freight and logistics support across the UK. From local collections to urgent long-distance deliveries, our team offers nationwide coverage with clear communication throughout.</p>",
+        "link": {
+          "label": "Contact Us Today",
+          "url": "#quote",
+          "newTab": false
+        },
+        "backgroundImage": {
+          "url": "/images/freight-services/img5E96C4CdA5D443578C7F37Aacb5A5F832.png",
+          "alt": ""
+        },
+        "mainImage": {
+          "url": "/images/freight-services/nationwide-map.png",
+          "alt": "Nationwide delivery coverage from PBL’s Birmingham base",
+          "layers": [
+            {
+              "url": "/images/freight-services/imgGroup2.svg",
+              "x": 0,
+              "y": 0,
+              "width": 427.379,
+              "height": 641.004
+            },
+            {
+              "url": "/images/freight-services/imgVector16.svg",
+              "x": 187.85739999999998,
+              "y": 446.7102,
+              "width": 47.1317,
+              "height": 36.8137
+            },
+            {
+              "url": "/images/freight-services/imgVector17.svg",
+              "x": 290.125,
+              "y": 454.6116999999999,
+              "width": 34.0082,
+              "height": 48.7904
+            },
+            {
+              "url": "/images/freight-services/imgVector18.svg",
+              "x": 117,
+              "y": 338.9557999999997,
+              "width": 97.5459,
+              "height": 66.6144
+            },
+            {
+              "url": "/images/freight-services/imgVector19.svg",
+              "x": 325.5576000000001,
+              "y": 442.36339999999973,
+              "width": 45.5993,
+              "height": 94.1965
+            },
+            {
+              "url": "/images/freight-services/imgVector20.svg",
+              "x": 191.60839999999996,
+              "y": 469.58299999999963,
+              "width": 67.5401,
+              "height": 92.647
+            },
+            {
+              "url": "/images/freight-services/imgVector21.svg",
+              "x": 177.28610000000003,
+              "y": 257.43939999999975,
+              "width": 73.4343,
+              "height": 133.9648
+            },
+            {
+              "url": "/images/freight-services/imgVector22.svg",
+              "x": 271.02930000000003,
+              "y": 349.3759,
+              "width": 29.9151,
+              "height": 37.1342
+            },
+            {
+              "url": "/images/freight-services/imgRectangle.png",
+              "x": 207.6934,
+              "y": 391.41190000000006,
+              "width": 110.8366,
+              "height": 74.1523
+            },
+            {
+              "url": "/images/freight-services/imgVector23.svg",
+              "x": 316.2324000000001,
+              "y": 436.99339999999984,
+              "width": 41.5735,
+              "height": 79.6153
+            }
+          ]
+        }
+      },
+      "form": {
+        "title": "<p>Get a Quote</p>",
+        "text": "<p>Based in Birmingham, PBL provides reliable freight and logistics support across the UK. From local collections to urgent long-distance deliveries, our team offers nationwide coverage with clear communication throughout.</p>",
+        "formKey": "services"
+      }
+    },
+    "seo": {
+      "title": "Freight Services | PBL",
+      "description": "Reliable nationwide freight, same-day delivery, distribution and warehousing from PBL’s Birmingham base.",
+      "ogImage": {
+        "url": "/images/freight-services/hero.png",
+        "alt": ""
+      }
+    }
+  },
+  "form": {
+    "name": "Freight services enquiry",
+    "key": "services",
+    "fields": [
+      {
+        "type": "text",
+        "label": "Full Name",
+        "name": "name",
+        "placeholder": "Enter Full Name",
+        "required": true,
+        "width": "half",
+        "helpText": ""
+      },
+      {
+        "type": "text",
+        "label": "Company Name",
+        "name": "company",
+        "placeholder": "Enter Company Name",
+        "required": false,
+        "width": "half",
+        "helpText": ""
+      },
+      {
+        "type": "text",
+        "label": "Contact Number",
+        "name": "phone",
+        "placeholder": "Enter Phone Number",
+        "required": true,
+        "width": "half",
+        "helpText": ""
+      },
+      {
+        "type": "text",
+        "label": "Email Address",
+        "name": "email",
+        "placeholder": "Enter Email Address",
+        "required": true,
+        "width": "half",
+        "helpText": ""
+      },
+      {
+        "type": "select",
+        "name": "service",
+        "label": "Freight Service Required",
+        "placeholder": "Please Select",
+        "required": true,
+        "width": "full",
+        "options": [
+          {
+            "label": "Same-Day Delivery",
+            "value": "same-day-delivery"
+          },
+          {
+            "label": "Time-Critical Deliveries",
+            "value": "time-critical-deliveries"
+          },
+          {
+            "label": "Next-Day Distribution",
+            "value": "next-day-distribution"
+          },
+          {
+            "label": "Nationwide Transport Solutions",
+            "value": "nationwide-transport-solutions"
+          },
+          {
+            "label": "Dedicated Vehicle Services",
+            "value": "dedicated-vehicle-services"
+          },
+          {
+            "label": "Subcontract & Overflow Support",
+            "value": "subcontract-overflow-support"
+          },
+          {
+            "label": "Full & Load Parts",
+            "value": "full-part-loads"
+          },
+          {
+            "label": "Short & Long-Term Warehousing",
+            "value": "warehousing"
+          },
+          {
+            "label": "Palletised Freight",
+            "value": "palletised-freight"
+          },
+          {
+            "label": "Secure Storage Solutions",
+            "value": "secure-storage"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Collection Postcode",
+        "name": "collection_postcode",
+        "placeholder": "Enter Collection Postcode",
+        "required": true,
+        "width": "half",
+        "helpText": ""
+      },
+      {
+        "type": "text",
+        "label": "Delivery Postcode",
+        "name": "delivery_postcode",
+        "placeholder": "Enter Delivery Postcode",
+        "required": true,
+        "width": "half",
+        "helpText": ""
+      },
+      {
+        "type": "date",
+        "name": "required_date",
+        "label": "Required Date",
+        "required": true,
+        "width": "half"
+      },
+      {
+        "type": "select",
+        "name": "load_type",
+        "label": "Load Type",
+        "placeholder": "Please Select",
+        "required": true,
+        "width": "half",
+        "options": [
+          {
+            "label": "Full load",
+            "value": "full-load"
+          },
+          {
+            "label": "Part load",
+            "value": "part-load"
+          },
+          {
+            "label": "Palletised goods",
+            "value": "palletised-goods"
+          },
+          {
+            "label": "Parcels / loose goods",
+            "value": "parcels-loose-goods"
+          },
+          {
+            "label": "Storage only",
+            "value": "storage-only"
+          },
+          {
+            "label": "Other / not sure",
+            "value": "other-not-sure"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "message",
+        "label": "Tell us about your requirements",
+        "placeholder": "Type your message",
+        "required": false,
+        "width": "full"
+      },
+      {
+        "type": "consent",
+        "name": "consent",
+        "label": "I agree to PBL (UK) Ltd using my details to respond to this enquiry, in accordance with the Privacy Policy.",
+        "required": true
+      },
+      {
+        "type": "submit",
+        "buttonText": "Submit"
+      }
+    ]
+  },
+  "testimonial": {
+    "name": "<p>Michelle Hall</p>",
+    "text": "<p>Job's quoted within mins, Fast collection and ETA to sites spot-on. friendly, reliable and easy to work with.</p>"
+  },
+  "globals": {
+    "contact": {
+      "number": "0121 270 7264",
+      "email": "ops@pblukltd.co.uk",
+      "address": "<p>PBL (UK) LTD, Unit K43 Hastingwood Industrial Park, Wood Lane, Birmingham, B24 9QR</p>"
+    },
+    "footer": {
+      "boldText": "<p>Keeping people, goods &amp; businesses moving.</p>",
+      "text": "<p>Reliable nationwide freight services and professional CPC training from an experienced, family-run Birmingham team.</p>",
+      "link": {
+        "label": "Get In Touch",
+        "url": "#quote",
+        "newTab": false
+      },
+      "bottomText": "<p>PBL (UK) LTD. All rights reserved.</p>"
+    }
+  }
+}

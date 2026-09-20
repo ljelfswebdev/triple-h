@@ -1,0 +1,20 @@
+{
+  "page": {
+    "slug": "contact",
+    "title": "Contact PBL",
+    "content": {
+      "intro": {
+        "title": "Contact PBL",
+        "text": "<p>If you require any help, please use our enquiry form and one of our team will get back to you as soon as possible. Alternatively, you can use the contact details below.</p>",
+        "details": [
+          { "label": "+44 (0)121 270 7264", "link": { "label": "Call Us", "url": "tel:+441212707264", "newTab": false }, "iconAsset": "contact-phone" },
+          { "label": "ops@pblukltd.co.uk", "link": { "label": "Email Us", "url": "mailto:ops@pblukltd.co.uk", "newTab": false }, "iconAsset": "contact-email" },
+          { "label": "PBL (UK) LTD,<br />Unit K43,<br />Hastingwood Industrial Park,<br />Wood Lane, Birmingham, B24 9QR", "link": { "label": "Get Directions", "url": "https://maps.google.com/?q=PBL+UK+LTD+B24+9QR", "newTab": true }, "iconAsset": "contact-location", "iconSecondaryAsset": "contact-location-secondary" }
+        ],
+        "formKey": "contact"
+      },
+      "map": { "imageAsset": "contact-map", "alt": "Map showing PBL UK Ltd in Birmingham" }
+    },
+    "seo": { "title": "Contact PBL", "description": "Contact PBL for freight services and professional CPC training in Birmingham and across the UK." }
+  }
+}
