@@ -7,8 +7,8 @@ export const defaultSiteCopy = {
       alt: "Triple H Contracts & Hire",
       publicId: "",
       resourceType: "image",
-      secureUrl: "/images/triple-h-logo.png",
-      url: "/images/triple-h-logo.png",
+      secureUrl: "/images/triple-h-logo.webp",
+      url: "/images/triple-h-logo.webp",
     },
   },
   header: {
