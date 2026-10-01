@@ -13,7 +13,7 @@ export default function CareersList({ vacancies }) {
       <div className="jobs-list pagination-scroll-target" id="careers-grid-start">
         {pagination.pageItems.map((job) => (
           <Link href={`/careers/${job.slug}`} key={job.slug}>
-            <div><span>{job.category || cards.vacancyCategoryFallback}</span><h3>{job.title}</h3><p>{job.location} · {job.hours}</p></div>
+            <div>{job.category ? <span>{job.category}</span> : null}<h3>{job.title}</h3>{job.location || job.hours ? <p>{[job.location, job.hours].filter(Boolean).join(" · ")}</p> : null}</div>
             <strong>{cards.viewRoleLabel} ↗</strong>
           </Link>
         ))}

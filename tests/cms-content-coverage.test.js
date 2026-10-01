@@ -18,6 +18,7 @@ test("Globals only contains truly shared public copy", () => {
       "branding",
       "cards",
       "cookie",
+      "detail",
       "footer",
       "header",
       "pagination",
@@ -27,10 +28,10 @@ test("Globals only contains truly shared public copy", () => {
 });
 
 test("page-specific and form-specific copy lives in the correct admin area", () => {
-  assert.ok(createDefaultPage("services").content.detail);
-  assert.ok(createDefaultPage("projects").content.detail);
-  assert.ok(createDefaultPage("news").content.detail);
-  assert.ok(createDefaultPage("careers").content.vacancy);
+  assert.equal(createDefaultPage("services").content.detail, undefined);
+  assert.equal(createDefaultPage("projects").content.detail, undefined);
+  assert.equal(createDefaultPage("news").content.detail, undefined);
+  assert.equal(createDefaultPage("careers").content.vacancy, undefined);
   assert.ok(createDefaultPage("portal").content.portal.auth);
   assert.ok(createDefaultPage("portal-reset-password").content.reset);
   assert.ok(createDefaultPage("not-found").content.notFound);
@@ -40,12 +41,12 @@ test("page-specific and form-specific copy lives in the correct admin area", () 
   );
 });
 
-test("editorial detail-page copy uses rich-text controls", () => {
-  for (const slug of ["services", "projects", "news"]) {
-    const detailTab = pageDefinitions[slug].tabs.find((tab) => tab.id === "detail");
-    const fields = Object.fromEntries(detailTab.fields.map((field) => [field.name, field]));
-    assert.equal(fields.fallbackText.type, "richtext");
-    assert.equal(fields.safetyText.type, "richtext");
+test("post types do not inherit hidden detail-page content", () => {
+  for (const slug of ["services", "projects", "news", "careers"]) {
+    assert.equal(
+      pageDefinitions[slug].tabs.some((tab) => tab.id === "detail" || tab.id === "vacancy"),
+      false,
+    );
   }
 });
 
@@ -63,7 +64,6 @@ test("standard detail pages expose every template section to the post editor", (
     "heroEyebrow",
     "contentEyebrow",
     "contentHeading",
-    "fallbackText",
     "safetyHeading",
     "safetyText",
     "enquiryEyebrow",
@@ -83,6 +83,8 @@ test("standard detail pages expose every template section to the post editor", (
 
   assert.match(editor, /imageAlt/);
   assert.match(template, /imageAlt=\{item\.meta\?\.imageAlt\}/);
+  assert.doesNotMatch(editor, /Fallback content/);
+  assert.doesNotMatch(template, /fallbackText|getEditablePage/);
 });
 
 test("homepage calls to action store both their label and destination in Pages", () => {

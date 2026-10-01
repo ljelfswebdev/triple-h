@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import CareerApplication from "@/components/forms/CareerApplication";
 import PageHero from "@/components/sections/triple-h/PageHero";
 import { getContentCollection, getContentItem } from "@/lib/content-items";
-import { getEditablePage } from "@/lib/page-content";
 import { createContentMetadata } from "@/lib/metadata";
 import { vacancySummary } from "@/lib/vacancies";
 
@@ -17,43 +16,43 @@ export async function generateMetadata({ params }) {
 
 export default async function VacancyPage({ params }) {
   const { slug } = await params;
-  const [vacancy, careersPage] = await Promise.all([getContentItem("vacancy", slug), getEditablePage("careers")]);
+  const vacancy = await getContentItem("vacancy", slug);
   if (!vacancy) notFound();
-  const copy = careersPage.content.vacancy;
-  const duties = vacancy.meta?.duties?.length ? vacancy.meta.duties.map((text) => ({ text })) : copy.defaultDuties;
+  const duties = vacancy.meta?.duties || [];
+  const hasRoleContent = Boolean(vacancy.meta?.roleEyebrow || vacancy.meta?.roleHeading || vacancy.excerpt || vacancy.body || vacancy.meta?.dutiesHeading || duties.length || vacancy.meta?.requirementsHeading || vacancy.meta?.requirementsText);
 
   return (
     <main id="main-content" tabIndex={-1}>
       <PageHero
-        eyebrow={vacancy.category || copy.heroFallbackEyebrow}
+        eyebrow={vacancy.meta?.heroEyebrow}
         image={vacancy.image}
         imageAlt={vacancy.meta?.imageAlt}
         text={vacancySummary(vacancy)}
         title={vacancy.title}
       />
-      <section className="section-large vacancy-content">
+      {hasRoleContent ? <section className="section-large vacancy-content">
         <article className="container detail-copy vacancy-copy">
-          <p className="eyebrow">{copy.roleEyebrow}</p>
-          <h2>{vacancy.meta?.roleHeading || copy.roleHeading}</h2>
-          <p>{vacancy.excerpt}</p>
+          {vacancy.meta?.roleEyebrow ? <p className="eyebrow">{vacancy.meta.roleEyebrow}</p> : null}
+          {vacancy.meta?.roleHeading ? <h2>{vacancy.meta.roleHeading}</h2> : null}
+          {vacancy.excerpt ? <p>{vacancy.excerpt}</p> : null}
           {vacancy.body ? <div className="text-block" dangerouslySetInnerHTML={{ __html: vacancy.body }} /> : null}
-          <h2>{copy.dutiesHeading}</h2>
-          <ul className="detail-points">
-            {duties.map((duty) => <li key={duty.text}>{duty.text}</li>)}
-          </ul>
-          <h2>{copy.requirementsHeading}</h2>
-          <div className="text-block" dangerouslySetInnerHTML={{ __html: vacancy.meta?.requirementsText || copy.requirementsText }} />
+          {vacancy.meta?.dutiesHeading ? <h2>{vacancy.meta.dutiesHeading}</h2> : null}
+          {duties.length ? <ul className="detail-points">
+            {duties.map((duty) => <li key={duty}>{duty}</li>)}
+          </ul> : null}
+          {vacancy.meta?.requirementsHeading ? <h2>{vacancy.meta.requirementsHeading}</h2> : null}
+          {vacancy.meta?.requirementsText ? <div className="text-block" dangerouslySetInnerHTML={{ __html: vacancy.meta.requirementsText }} /> : null}
         </article>
-      </section>
+      </section> : null}
       <section className="career-application-section">
         <div className="container career-application-panel">
-          <div className="career-application-panel__heading">
+          {vacancy.meta?.applyPrefix || vacancy.meta?.applyHeading || vacancy.meta?.applyText ? <div className="career-application-panel__heading">
             <div>
-              <p className="eyebrow">{copy.applyPrefix} {vacancy.title}</p>
-              <h2>{copy.applyHeading}</h2>
+              {vacancy.meta?.applyPrefix ? <p className="eyebrow">{vacancy.meta.applyPrefix} {vacancy.title}</p> : null}
+              {vacancy.meta?.applyHeading ? <h2>{vacancy.meta.applyHeading}</h2> : null}
             </div>
-            <div className="text-block" dangerouslySetInnerHTML={{ __html: copy.applyText }} />
-          </div>
+            {vacancy.meta?.applyText ? <div className="text-block" dangerouslySetInnerHTML={{ __html: vacancy.meta.applyText }} /> : null}
+          </div> : null}
           <CareerApplication vacancy={vacancy.title} />
         </div>
       </section>

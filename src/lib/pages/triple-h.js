@@ -13,37 +13,6 @@ const tab = (id, label, path, fields) => ({ id, label, path, fields });
 const seoTab = tab("seo", "SEO", ["seo"], seoFields);
 const linkWithDefault = (name, label, value) => ({ ...link(name, label), defaultValue: value });
 
-const detailFields = (kind) => {
-  const copy = defaultSiteCopy.detail;
-  const fields = [
-    t("contentEyebrow", "Content eyebrow", copy.contentEyebrow),
-    t("contentHeading", "Content heading", kind === "service" ? copy.serviceHeading : copy.defaultHeading),
-    rt("fallbackText", "Fallback content", copy.fallbackText),
-  ];
-  if (kind === "service") {
-    fields.unshift(t("heroEyebrow", "Fallback hero eyebrow", copy.serviceHeroEyebrow));
-  }
-  if (kind === "project") {
-    fields.push(
-      t("sectorLabel", "Sector label", copy.sectorLabel),
-      t("sectorFallback", "Sector fallback", copy.sectorFallback),
-      t("locationLabel", "Location label", copy.locationLabel),
-      t("locationFallback", "Location fallback", copy.locationFallback),
-    );
-  }
-  return [
-    ...fields,
-    t("safetyHeading", "Safety heading", copy.safetyHeading),
-    rt("safetyText", "Safety text", copy.safetyText),
-    t("enquiryEyebrow", "Enquiry eyebrow", copy.enquiryEyebrow),
-    t("enquiryHeading", "Enquiry heading", copy.enquiryHeading),
-    t("nextEyebrow", "Next-step eyebrow", copy.nextEyebrow),
-    t("nextHeading", "Next-step heading", copy.nextHeading),
-    linkWithDefault("enquiryLink", "Enquiry button", copy.enquiryLink),
-    linkWithDefault("projectsLink", "Projects button", copy.projectsLink),
-  ];
-};
-
 const portalAuthFields = () => {
   const copy = defaultSiteCopy.portal;
   return [
@@ -229,12 +198,8 @@ export const tripleHPageDefinitions = {
   values: shell("Values & standards", "/about/values", ["How we work", "Our values & standards", "Safety, quality, teamwork and progression are the standards behind every decision we make.", MEDIA.hero], [
     tab("content", "Content", ["content", "editorial"], [rt("body", "Page content", "<h2>Safety comes first.</h2><p>We plan thoroughly, speak up early and make sure everyone understands the method before work begins.</p><h2>Quality is owned.</h2><p>Every member of the team is responsible for the finish, the details and the client experience.</p><h2>Teamwork gets it done.</h2><p>We share knowledge, communicate without ego and back each other when conditions change.</p><h2>Progression keeps us moving.</h2><p>We invest in training, better equipment and smarter systems that create stronger careers and better outcomes.</p>")]),
   ]),
-  services: shell("Services", "/services", ["Our capability", "Work ready. Site ready. Future ready.", "People, plant and planning for demanding environments.", MEDIA.hero], [
-    tab("detail", "Service detail pages", ["content", "detail"], detailFields("service")),
-  ]),
-  projects: shell("Projects", "/projects", ["Selected work", "Delivery you can see.", "Selected projects that show how our people, plant and planning come together on site.", MEDIA.team], [
-    tab("detail", "Project detail pages", ["content", "detail"], detailFields("project")),
-  ]),
+  services: shell("Services", "/services", ["Our capability", "Work ready. Site ready. Future ready.", "People, plant and planning for demanding environments.", MEDIA.hero]),
+  projects: shell("Projects", "/projects", ["Selected work", "Delivery you can see.", "Selected projects that show how our people, plant and planning come together on site.", MEDIA.team]),
   news: shell("News", "/news", ["From the ground", "What’s moving at Triple H.", "People, plant, projects and progress from across the business.", MEDIA.arborist], [
     tab("filters", "Archive controls", ["content", "filters"], [
       t("toggleLabel", "Mobile filter button", "Filter news"), t("eyebrow", "Filter eyebrow", "Find a story"), t("title", "Filter heading", "Filter news."),
@@ -249,17 +214,10 @@ export const tripleHPageDefinitions = {
       t("activeLabel", "Active-filter connector", "active"), t("activeSingularLabel", "Singular active-filter label", "filter"), t("activePluralLabel", "Plural active-filter label", "filters"),
       t("emptyTitle", "No-results heading", "No stories found."), t("emptyText", "No-results text", "Try a different search, category or date.", { multiline: true }), t("emptyButtonLabel", "No-results button", "Clear filters"),
     ]),
-    tab("detail", "News detail pages", ["content", "detail"], detailFields("news")),
   ]),
   careers: shell("Careers", "/careers", ["Join the team", "Good people build great work.", "Real responsibility, proper backing and work you can be proud of.", MEDIA.team], [
     tab("intro", "Introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "Why Triple H"), t("title", "Heading", "More than a job on the tools."), rt("text", "Text", "We want capable people to stay, grow and lead. That means clear standards, strong supervision, useful training and opportunities to progress as the business grows."), image("image", "Image", MEDIA.arborist, "Arborist working safely in a mature tree")]),
     tab("jobs", "Jobs section", ["content", "jobs"], [t("eyebrow", "Eyebrow", "Open roles"), t("title", "Heading", "Find your next move.")]),
-    tab("vacancy", "Vacancy detail pages", ["content", "vacancy"], [
-      t("heroFallbackEyebrow", "Hero fallback eyebrow", defaultSiteCopy.vacancy.heroFallbackEyebrow), t("roleEyebrow", "Role eyebrow", defaultSiteCopy.vacancy.roleEyebrow), t("roleHeading", "Role heading", defaultSiteCopy.vacancy.roleHeading),
-      t("dutiesHeading", "Duties heading", defaultSiteCopy.vacancy.dutiesHeading), t("requirementsHeading", "Requirements heading", defaultSiteCopy.vacancy.requirementsHeading), rt("requirementsText", "Requirements text", defaultSiteCopy.vacancy.requirementsText),
-      t("applyPrefix", "Application eyebrow prefix", defaultSiteCopy.vacancy.applyPrefix), t("applyHeading", "Application heading", defaultSiteCopy.vacancy.applyHeading), rt("applyText", "Application introduction", defaultSiteCopy.vacancy.applyText),
-      { ...repeater("defaultDuties", "Default duties", [t("text", "Duty", "Add a duty")]), defaultValue: defaultSiteCopy.vacancy.defaultDuties },
-    ]),
   ]),
   compliance: shell("Compliance", "/compliance", ["Compliance", "Safety isn’t a badge. It’s the operating system.", "Trust is built through visible systems, competent people and disciplined delivery.", MEDIA.arborist], [
     tab("content", "Operational control", ["content", "operational"], [t("eyebrow", "Eyebrow", "Operational control"), t("title", "Heading", "From planning to proof."), rt("body", "Content", "<p>Our compliance structure is designed to make expectations clear before teams arrive on site and keep the right information available throughout delivery.</p><p>Current certification evidence and supporting documents are available to clients as part of our tender and mobilisation process.</p>"), { ...repeater("systems", "Systems", [t("text", "System", "Add a system")]), defaultValue: ["Daily vehicle and plant checks", "Work planning and job allocation", "Risk assessments and method statements", "Live sign-on and site documentation", "Central records and audit readiness", "Environmental and waste controls"].map((textValue) => ({ text: textValue })) }]),

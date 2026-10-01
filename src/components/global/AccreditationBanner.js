@@ -21,7 +21,7 @@ export default function AccreditationBanner({ copy, items = [] }) {
           </span>
           <div>
             <strong>{item.title}</strong>
-            <span>{item.excerpt || copy.itemFallback}</span>
+            {item.excerpt ? <span>{item.excerpt}</span> : null}
           </div>
         </article>
       ))}

@@ -39,7 +39,7 @@ export const globalTabs = [
     path: ["siteCopy", "accreditationBanner"],
     fields: [
       text("eyebrow", "Eyebrow"), text("title", "Heading", { multiline: true }),
-      text("itemFallback", "Missing-description fallback"), text("ariaLabel", "Accessible label"),
+      text("ariaLabel", "Accessible label"),
       link("link", "Compliance link"),
     ],
   },
@@ -47,13 +47,19 @@ export const globalTabs = [
     id: "cards",
     label: "Cards & lists",
     path: ["siteCopy", "cards"],
-    fields: [text("exploreLabel", "Card link label"), text("viewDetailsLabel", "Accessible details label"), text("viewRoleLabel", "Vacancy link label"), text("viewProfileLabel", "Team profile label"), text("rolesPaginationLabel", "Roles pagination label"), text("teamPaginationLabel", "Team pagination label"), text("newsPaginationLabel", "News pagination label"), text("entriesPaginationLabel", "General pagination label"), text("vacancyCategoryFallback", "Vacancy category fallback"), text("testimonialPaginationLabel", "Testimonials pagination label"), text("testimonialReadMoreLabel", "Testimonial read-more label"), text("testimonialModalPrefix", "Testimonial modal prefix"), text("testimonialModalFallback", "Testimonial modal fallback")],
+    fields: [text("exploreLabel", "Card link label"), text("viewDetailsLabel", "Accessible details label"), text("viewRoleLabel", "Vacancy link label"), text("viewProfileLabel", "Team profile label"), text("rolesPaginationLabel", "Roles pagination label"), text("teamPaginationLabel", "Team pagination label"), text("newsPaginationLabel", "News pagination label"), text("entriesPaginationLabel", "General pagination label"), text("testimonialPaginationLabel", "Testimonials pagination label"), text("testimonialReadMoreLabel", "Testimonial read-more label"), text("testimonialModalPrefix", "Testimonial modal prefix"), text("testimonialModalFallback", "Testimonial modal fallback")],
   },
   {
     id: "pagination",
     label: "Pagination",
     path: ["siteCopy", "pagination"],
     fields: [text("previousLabel", "Previous-page accessible label"), text("previousShortLabel", "Previous button label"), text("nextLabel", "Next-page accessible label"), text("nextShortLabel", "Next button label"), text("pageLabel", "Page label"), text("choosePageLabel", "Page chooser label"), text("ofLabel", "Total-pages connector")],
+  },
+  {
+    id: "detail-labels",
+    label: "Detail-page labels",
+    path: ["siteCopy", "detail"],
+    fields: [text("sectorLabel", "Project sector label"), text("locationLabel", "Project location label")],
   },
   {
     id: "cookies",
