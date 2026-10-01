@@ -88,7 +88,7 @@ function CtaBlock({ block }) {
   return <ThemeSection block={block} className="builder-cta"><div className="container builder-cta__inner"><div>
     {block.eyebrow ? <p className="eyebrow">{block.eyebrow}</p> : null}
     {block.title ? <h2>{block.title}</h2> : null}
-    {block.text ? <p>{block.text}</p> : null}
+    {block.text ? <div className="builder-rich-text" dangerouslySetInnerHTML={{ __html: block.text }} /> : null}
   </div><BuilderLink link={block.link} /></div></ThemeSection>;
 }
 
@@ -96,7 +96,7 @@ function EnquiryBlock({ block, contextTitle }) {
   return <section className="builder-section builder-enquiry"><div className="container builder-enquiry__grid"><div className="builder-enquiry__intro">
     {block.eyebrow ? <p className="eyebrow">{block.eyebrow}</p> : null}
     {block.title ? <h2>{block.title}</h2> : null}
-    {block.text ? <p>{block.text}</p> : null}
+    {block.text ? <div className="builder-rich-text" dangerouslySetInnerHTML={{ __html: block.text }} /> : null}
   </div><QuickEnquiry service={contextTitle} /></div></section>;
 }
 

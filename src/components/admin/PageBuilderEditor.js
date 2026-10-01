@@ -115,7 +115,7 @@ function BlockFields({ block, onChange }) {
 
   if (block.type === "cta") return <>
     {headingFields}
-    <div className="field"><label>Supporting text</label><textarea onChange={(event) => update("text", event.target.value)} placeholder="Give people a reason to take the next step" rows="4" value={block.text || ""} /></div>
+    <div className="field admin-field"><label>Supporting text</label><RichTextEditor label="Call-to-action supporting text" onChange={(value) => update("text", value)} value={block.text || ""} /></div>
     <div className="admin-post-editor__two-column">
       <div className="field"><label>Button label</label><input onChange={(event) => update("link", { ...block.link, label: event.target.value })} placeholder="e.g. Contact us" value={block.link?.label || ""} /></div>
       <div className="field"><label>Button destination</label><input onChange={(event) => update("link", { ...block.link, url: event.target.value })} placeholder="/contact or https://…" value={block.link?.url || ""} /></div>
@@ -128,7 +128,7 @@ function BlockFields({ block, onChange }) {
 
   if (block.type === "enquiry") return <>
     {headingFields}
-    <div className="field"><label>Supporting text</label><textarea onChange={(event) => update("text", event.target.value)} placeholder="Add a short introduction" rows="4" value={block.text || ""} /></div>
+    <div className="field admin-field"><label>Supporting text</label><RichTextEditor label="Enquiry supporting text" onChange={(value) => update("text", value)} value={block.text || ""} /></div>
   </>;
 
   return null;

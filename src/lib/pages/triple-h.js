@@ -18,7 +18,7 @@ const detailFields = (kind) => {
   const fields = [
     t("contentEyebrow", "Content eyebrow", copy.contentEyebrow),
     t("contentHeading", "Content heading", kind === "service" ? copy.serviceHeading : copy.defaultHeading),
-    t("fallbackText", "Fallback content", copy.fallbackText, { multiline: true }),
+    rt("fallbackText", "Fallback content", copy.fallbackText),
   ];
   if (kind === "service") {
     fields.unshift(t("heroEyebrow", "Fallback hero eyebrow", copy.serviceHeroEyebrow));
@@ -34,7 +34,7 @@ const detailFields = (kind) => {
   return [
     ...fields,
     t("safetyHeading", "Safety heading", copy.safetyHeading),
-    t("safetyText", "Safety text", copy.safetyText, { multiline: true }),
+    rt("safetyText", "Safety text", copy.safetyText),
     t("enquiryEyebrow", "Enquiry eyebrow", copy.enquiryEyebrow),
     t("enquiryHeading", "Enquiry heading", copy.enquiryHeading),
     t("nextEyebrow", "Next-step eyebrow", copy.nextEyebrow),
@@ -86,7 +86,7 @@ function hero(eyebrow, title, textValue, imageUrl = MEDIA.hero) {
   return tab("hero", "Hero", ["content", "hero"], [
     t("eyebrow", "Eyebrow", eyebrow),
     t("title", "Heading", title, { multiline: true }),
-    t("text", "Introduction", textValue, { multiline: true }),
+    rt("text", "Introduction", textValue),
     image("image", "Hero image", imageUrl, title),
   ]);
 }
@@ -124,13 +124,13 @@ export const tripleHPageDefinitions = {
     tab("capability", "Services intro", ["content", "capability"], [
       t("eyebrow", "Eyebrow", "What we do"),
       t("title", "Heading", "Built for the work others can’t afford to get wrong.", { multiline: true }),
-      t("text", "Text", "We bring trained people, specialist plant and disciplined planning together for demanding commercial and infrastructure environments.", { multiline: true }),
+      rt("text", "Text", "We bring trained people, specialist plant and disciplined planning together for demanding commercial and infrastructure environments."),
     ]),
     tab("standard", "Triple H standard", ["content", "standard"], [
       t("number", "Image caption number", "01"),
       t("eyebrow", "Eyebrow", "The Triple H standard"),
       t("title", "Heading", "Sharp systems. Solid people. Zero theatre.", { multiline: true }),
-      t("text", "Text", "Every programme starts with clear planning and finishes with accountable delivery. Safety, communication and respect for the environment are built into the job.", { multiline: true }),
+      rt("text", "Text", "Every programme starts with clear planning and finishes with accountable delivery. Safety, communication and respect for the environment are built into the job."),
       image("image", "Section image", MEDIA.team, "Triple H team planning work on site"),
       { ...link("link", "Section button"), defaultValue: { label: "How we work", url: "/compliance", newTab: false } },
       {
@@ -146,7 +146,7 @@ export const tripleHPageDefinitions = {
     tab("careers", "Careers panel", ["content", "careers"], [
       t("eyebrow", "Eyebrow", "Careers at Triple H"),
       t("title", "Heading", "Do work you can point to."),
-      t("text", "Text", "We’re growing practical teams with the tickets, backing and progression to build a proper career.", { multiline: true }),
+      rt("text", "Text", "We’re growing practical teams with the tickets, backing and progression to build a proper career."),
       image("image", "Background image", MEDIA.arborist, "A skilled arborist working at height"),
       { ...link("link", "Section button"), defaultValue: { label: "See open roles", url: "/careers", newTab: false } },
     ]),
@@ -192,7 +192,7 @@ export const tripleHPageDefinitions = {
         ...repeater("items", "Directory cards", [
           t("number", "Number", "01"),
           t("title", "Title", "Page title"),
-          t("text", "Text", "Page summary", { multiline: true }),
+          rt("text", "Text", "Page summary"),
           link("link", "Destination"),
         ]),
         defaultValue: [
@@ -207,7 +207,7 @@ export const tripleHPageDefinitions = {
       t("eyebrow", "Eyebrow", "What drives us"),
       t("title", "Heading", "Four words. One standard."),
       {
-        ...repeater("items", "Values", [t("number", "Number", "01"), t("title", "Title", "Safety"), t("text", "Text", "Describe this value", { multiline: true })]),
+        ...repeater("items", "Values", [t("number", "Number", "01"), t("title", "Title", "Safety"), rt("text", "Text", "Describe this value")]),
         defaultValue: [
           { number: "01", title: "Safety", text: "Plan thoroughly, speak up early and protect everyone around the job." },
           { number: "02", title: "Quality", text: "Take ownership of the finish, the detail and the client experience." },
@@ -218,10 +218,10 @@ export const tripleHPageDefinitions = {
     ]),
   ]),
   "meet-the-team": shell("Meet the team", "/about/meet-the-team", ["Meet the team", "Real people. Serious capability.", "Good work starts with good people. Meet the team driving our standards on site and behind the scenes.", MEDIA.team], [
-    tab("intro", "Page introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "People behind the work"), t("title", "Heading", "One team. Every detail covered."), t("text", "Text", "Select a team member to read more about their role, experience and approach.", { multiline: true })]),
+    tab("intro", "Page introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "People behind the work"), t("title", "Heading", "One team. Every detail covered."), rt("text", "Text", "Select a team member to read more about their role, experience and approach.")]),
   ]),
   testimonials: shell("Testimonials", "/about/testimonials", ["Client testimonials", "Trusted to get it done.", "Straight feedback from the people who trust Triple H to deliver in demanding environments.", MEDIA.hero], [
-    tab("intro", "Page introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "What clients say"), t("title", "Heading", "Results build relationships."), t("text", "Text", "Long-term partnerships are earned through safe delivery, straight communication and a team that follows through.", { multiline: true })]),
+    tab("intro", "Page introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "What clients say"), t("title", "Heading", "Results build relationships."), rt("text", "Text", "Long-term partnerships are earned through safe delivery, straight communication and a team that follows through.")]),
   ]),
   "our-story": shell("Our story", "/about/our-story", ["About Triple H", "Our story", "A practical business built around capable people, honest relationships and a determination to keep raising the standard.", MEDIA.team], [
     tab("content", "Content", ["content", "editorial"], [rt("body", "Page content", "<h2>Built from the ground up.</h2><p>Triple H Contracts & Hire grew from a simple belief: demanding outdoor work deserves better planning, better communication and a team that takes real pride in the finish.</p><p>Today, we bring together skilled operatives, supervisors, specialist plant and trusted partners to support infrastructure and commercial clients across the UK.</p><h2>Ready for the next challenge.</h2><p>We continue to invest in people, machinery and systems so we can take on more complex projects without losing the responsive, personal service that shaped the business.</p>")]),
@@ -252,12 +252,12 @@ export const tripleHPageDefinitions = {
     tab("detail", "News detail pages", ["content", "detail"], detailFields("news")),
   ]),
   careers: shell("Careers", "/careers", ["Join the team", "Good people build great work.", "Real responsibility, proper backing and work you can be proud of.", MEDIA.team], [
-    tab("intro", "Introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "Why Triple H"), t("title", "Heading", "More than a job on the tools."), t("text", "Text", "We want capable people to stay, grow and lead. That means clear standards, strong supervision, useful training and opportunities to progress as the business grows.", { multiline: true }), image("image", "Image", MEDIA.arborist, "Arborist working safely in a mature tree")]),
+    tab("intro", "Introduction", ["content", "intro"], [t("eyebrow", "Eyebrow", "Why Triple H"), t("title", "Heading", "More than a job on the tools."), rt("text", "Text", "We want capable people to stay, grow and lead. That means clear standards, strong supervision, useful training and opportunities to progress as the business grows."), image("image", "Image", MEDIA.arborist, "Arborist working safely in a mature tree")]),
     tab("jobs", "Jobs section", ["content", "jobs"], [t("eyebrow", "Eyebrow", "Open roles"), t("title", "Heading", "Find your next move.")]),
     tab("vacancy", "Vacancy detail pages", ["content", "vacancy"], [
       t("heroFallbackEyebrow", "Hero fallback eyebrow", defaultSiteCopy.vacancy.heroFallbackEyebrow), t("roleEyebrow", "Role eyebrow", defaultSiteCopy.vacancy.roleEyebrow), t("roleHeading", "Role heading", defaultSiteCopy.vacancy.roleHeading),
-      t("dutiesHeading", "Duties heading", defaultSiteCopy.vacancy.dutiesHeading), t("requirementsHeading", "Requirements heading", defaultSiteCopy.vacancy.requirementsHeading), t("requirementsText", "Requirements text", defaultSiteCopy.vacancy.requirementsText, { multiline: true }),
-      t("applyPrefix", "Application eyebrow prefix", defaultSiteCopy.vacancy.applyPrefix), t("applyHeading", "Application heading", defaultSiteCopy.vacancy.applyHeading), t("applyText", "Application introduction", defaultSiteCopy.vacancy.applyText, { multiline: true }),
+      t("dutiesHeading", "Duties heading", defaultSiteCopy.vacancy.dutiesHeading), t("requirementsHeading", "Requirements heading", defaultSiteCopy.vacancy.requirementsHeading), rt("requirementsText", "Requirements text", defaultSiteCopy.vacancy.requirementsText),
+      t("applyPrefix", "Application eyebrow prefix", defaultSiteCopy.vacancy.applyPrefix), t("applyHeading", "Application heading", defaultSiteCopy.vacancy.applyHeading), rt("applyText", "Application introduction", defaultSiteCopy.vacancy.applyText),
       { ...repeater("defaultDuties", "Default duties", [t("text", "Duty", "Add a duty")]), defaultValue: defaultSiteCopy.vacancy.defaultDuties },
     ]),
   ]),
@@ -273,7 +273,7 @@ export const tripleHPageDefinitions = {
     ]),
   ]),
   contact: shell("Contact", "/contact", ["Contact", "Let’s get the right people on it.", "Tell us what’s happening, where it is and what good looks like.", MEDIA.hero], [
-    tab("contact", "Contact panel", ["content", "contact"], [t("eyebrow", "Eyebrow", "Direct contact"), t("title", "Heading", "We’d rather have the conversation."), t("emergencyTitle", "Emergency heading", "24/7 emergency?"), t("emergencyText", "Emergency text", "Call the number above for the fastest route.", { multiline: true })]),
+    tab("contact", "Contact panel", ["content", "contact"], [t("eyebrow", "Eyebrow", "Direct contact"), t("title", "Heading", "We’d rather have the conversation."), t("emergencyTitle", "Emergency heading", "24/7 emergency?"), rt("emergencyText", "Emergency text", "Call the number above for the fastest route.")]),
   ]),
   portal: {
     title: "Portal",

@@ -6,5 +6,5 @@ export async function generateMetadata() { return getEditablePageMetadata("servi
 export default async function ServicesPage() {
   const [items, page] = await Promise.all([getContentCollection("service"), getEditablePage("services")]);
   const hero = page.content.hero;
-  return <ArchivePage basePath="/services" eyebrow={hero.eyebrow} image={pageMediaUrl(hero.image)} items={items} text={hero.text} title={hero.title} />;
+  return <ArchivePage basePath="/services" eyebrow={hero.eyebrow} image={pageMediaUrl(hero.image)} imageAlt={hero.image?.alt} items={items} text={hero.text} title={hero.title} />;
 }

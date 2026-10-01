@@ -13,6 +13,7 @@ export default async function NewsPage() {
       <PageHero
         eyebrow={hero.eyebrow}
         image={pageMediaUrl(hero.image)}
+        imageAlt={hero.image?.alt}
         text={hero.text}
         title={hero.title}
       />

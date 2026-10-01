@@ -27,6 +27,7 @@ export default async function VacancyPage({ params }) {
       <PageHero
         eyebrow={vacancy.category || copy.heroFallbackEyebrow}
         image={vacancy.image}
+        imageAlt={vacancy.meta?.imageAlt}
         text={vacancySummary(vacancy)}
         title={vacancy.title}
       />
@@ -41,7 +42,7 @@ export default async function VacancyPage({ params }) {
             {duties.map((duty) => <li key={duty.text}>{duty.text}</li>)}
           </ul>
           <h2>{copy.requirementsHeading}</h2>
-          <p>{vacancy.meta?.requirementsText || copy.requirementsText}</p>
+          <div className="text-block" dangerouslySetInnerHTML={{ __html: vacancy.meta?.requirementsText || copy.requirementsText }} />
         </article>
       </section>
       <section className="career-application-section">
@@ -51,9 +52,7 @@ export default async function VacancyPage({ params }) {
               <p className="eyebrow">{copy.applyPrefix} {vacancy.title}</p>
               <h2>{copy.applyHeading}</h2>
             </div>
-            <p>
-              {copy.applyText}
-            </p>
+            <div className="text-block" dangerouslySetInnerHTML={{ __html: copy.applyText }} />
           </div>
           <CareerApplication vacancy={vacancy.title} />
         </div>

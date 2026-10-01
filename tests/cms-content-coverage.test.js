@@ -3,7 +3,7 @@ import test from "node:test";
 import { readFileSync } from "node:fs";
 import { defaultGlobals, globalTabs } from "../src/lib/admin/globals.js";
 import { defaultSiteCopy } from "../src/lib/site-copy.js";
-import { createDefaultPage } from "../src/lib/page-definitions.js";
+import { createDefaultPage, pageDefinitions } from "../src/lib/page-definitions.js";
 import { seedForms } from "../src/lib/admin/forms.js";
 
 test("Globals only contains truly shared public copy", () => {
@@ -38,6 +38,51 @@ test("page-specific and form-specific copy lives in the correct admin area", () 
     new Set(seedForms.map((form) => form.key)),
     new Set(["service-enquiry", "career-application", "newsletter-signup"]),
   );
+});
+
+test("editorial detail-page copy uses rich-text controls", () => {
+  for (const slug of ["services", "projects", "news"]) {
+    const detailTab = pageDefinitions[slug].tabs.find((tab) => tab.id === "detail");
+    const fields = Object.fromEntries(detailTab.fields.map((field) => [field.name, field]));
+    assert.equal(fields.fallbackText.type, "richtext");
+    assert.equal(fields.safetyText.type, "richtext");
+  }
+});
+
+test("standard detail pages expose every template section to the post editor", () => {
+  const editor = readFileSync(
+    new URL("../src/components/admin/ContentTypeViews.js", import.meta.url),
+    "utf8",
+  );
+  const template = readFileSync(
+    new URL("../src/components/sections/triple-h/DetailPage.js", import.meta.url),
+    "utf8",
+  );
+
+  for (const key of [
+    "heroEyebrow",
+    "contentEyebrow",
+    "contentHeading",
+    "fallbackText",
+    "safetyHeading",
+    "safetyText",
+    "enquiryEyebrow",
+    "enquiryHeading",
+    "nextEyebrow",
+    "nextHeading",
+    "enquiryLink",
+    "projectsLink",
+  ]) {
+    assert.match(editor, new RegExp(key), `${key} must be editable per post`);
+    assert.match(
+      template,
+      new RegExp(`item\\.meta\\?\\.${key}`),
+      `${key} must render its post override`,
+    );
+  }
+
+  assert.match(editor, /imageAlt/);
+  assert.match(template, /imageAlt=\{item\.meta\?\.imageAlt\}/);
 });
 
 test("homepage calls to action store both their label and destination in Pages", () => {

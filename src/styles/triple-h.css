@@ -195,6 +195,8 @@
 .page-hero__inner { position: relative; z-index: 1; padding-block: 180px 80px; }
 .page-hero h1 { max-width: 1000px; margin: 0; line-height: .84; }
 .page-hero__text { max-width: 720px; margin: 24px 0 0; font-size: var(--font-body-large); line-height: 1.55; }
+.page-hero__text > :first-child { margin-top: 0; }
+.page-hero__text > :last-child { margin-bottom: 0; }
 .page-hero--urgent .page-hero__scrim { background: linear-gradient(90deg, rgb(140 0 10 / 94%), rgb(0 0 0 / 35%)); }
 .detail-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(340px, .65fr); align-items: start; gap: clamp(40px, 8vw, 110px); }
 .detail-copy { font-size: var(--font-body-large); line-height: 1.7; }

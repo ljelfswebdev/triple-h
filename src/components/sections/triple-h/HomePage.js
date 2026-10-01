@@ -3,6 +3,7 @@ import Link from "next/link";
 import CollectionCard from "./CollectionCard";
 import ParallaxMedia from "./ParallaxMedia";
 import QuickEnquiry from "@/components/forms/QuickEnquiry";
+import { RichCopy } from "@/components/sections/shared/Content";
 import { pageMediaUrl } from "@/lib/page-content";
 
 export default function HomePage({ contact, content, services, projects, news, vacancies }) {
@@ -56,7 +57,7 @@ export default function HomePage({ contact, content, services, projects, news, v
         <div className="container">
           <div className="section-heading section-heading--split">
             <div><p className="eyebrow">{capability.eyebrow}</p><h2>{capability.title}</h2></div>
-            <p>{capability.text}</p>
+            <RichCopy className="body-large" html={capability.text} />
           </div>
           <div className="content-grid content-grid--services">
             {services.map((service, index) => <CollectionCard href={`/services/${service.slug}`} index={index} item={service} key={service.slug} />)}
@@ -69,7 +70,7 @@ export default function HomePage({ contact, content, services, projects, news, v
         <div className="split-feature__content">
           <p className="eyebrow">{standard.eyebrow}</p>
           <h2>{standard.title}</h2>
-          <p>{standard.text}</p>
+          <RichCopy className="body-large" html={standard.text} />
           <ul className="tick-list">{standard.points.map((point) => <li key={point.text}>{point.text}</li>)}</ul>
           <Link className="btn btn-primary" href={standard.link.url}>{standard.link.label}</Link>
         </div>
@@ -87,7 +88,7 @@ export default function HomePage({ contact, content, services, projects, news, v
         <div className="container careers-band__content">
           <p className="eyebrow">{careers.eyebrow}</p>
           <h2>{careers.title}</h2>
-          <p>{careers.text}</p>
+          <RichCopy className="body-large" html={careers.text} />
           <div className="vacancy-pills">{vacancies.slice(0, 3).map((vacancy) => <Link href={`/careers/${vacancy.slug}`} key={vacancy.slug}>{vacancy.title}</Link>)}</div>
           <Link className="btn btn-primary" href={careers.link.url}>{careers.link.label}</Link>
         </div>
