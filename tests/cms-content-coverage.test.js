@@ -53,6 +53,40 @@ test("post types do not inherit hidden detail-page content", () => {
   }
 });
 
+test("admin editors follow the public page from top to bottom", () => {
+  assert.deepEqual(
+    pageDefinitions.homepage.tabs.map((tab) => tab.id),
+    [
+      "hero",
+      "hero-actions",
+      "proof",
+      "ticker",
+      "capability",
+      "standard",
+      "projects",
+      "careers",
+      "news",
+      "emergency",
+      "seo",
+    ],
+  );
+
+  const editor = readFileSync(
+    new URL("../src/components/admin/ContentTypeViews.js", import.meta.url),
+    "utf8",
+  );
+  const tabs = editor.slice(
+    editor.indexOf("const editorTabs = ["),
+    editor.indexOf("const [activeTab"),
+  );
+  const orderedTabs = ["hero", "content", "builder", "conversion", "publishing", "seo"];
+  orderedTabs.reduce((previousIndex, tab) => {
+    const currentIndex = tabs.indexOf(`id: "${tab}"`);
+    assert.ok(currentIndex > previousIndex, `${tab} should follow the preceding page section`);
+    return currentIndex;
+  }, -1);
+});
+
 test("standard detail pages expose every template section to the post editor", () => {
   const editor = readFileSync(
     new URL("../src/components/admin/ContentTypeViews.js", import.meta.url),

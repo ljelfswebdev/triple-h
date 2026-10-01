@@ -295,15 +295,17 @@ export function ContentTypeList({ basePath, type }) {
 export function ContentTypeEditor({ basePath, itemId, type }) {
   const definition = contentTypeDefinitions[type];
   const creating = itemId === "new";
-  const hasDetailsTab = Boolean(definition.date || definition.detailFields || definition.highlights || definition.projectFields || definition.vacancyFields);
+  const hasStructuredContent = Boolean(definition.detailFields || definition.highlights || definition.projectFields || definition.vacancyFields);
+  const hasConversionTab = Boolean(definition.detailFields || definition.vacancyFields);
   const editorTabs = [
-    { id: "content", label: "Content" },
-    ...(hasDetailsTab ? [{ id: "details", label: "Details" }] : []),
+    { id: "hero", label: definition.archiveOnly ? "Card content" : "Hero & page info" },
+    { id: "content", label: definition.vacancyFields ? "Role content" : hasStructuredContent ? "Main content" : "Content" },
     ...(definition.pageBuilder ? [{ id: "builder", label: "Page builder" }] : []),
-    { id: "publishing", label: "Media & publishing" },
+    ...(hasConversionTab ? [{ id: "conversion", label: definition.vacancyFields ? "Application" : "Enquiry & next step" }] : []),
+    { id: "publishing", label: "Publishing" },
     { id: "seo", label: "SEO & sharing" },
   ];
-  const [activeTab, setActiveTab] = useState("content");
+  const [activeTab, setActiveTab] = useState("hero");
   const [error, setError] = useState("");
   const [form, setForm] = useState(creating ? emptyItem(definition) : null);
   const [saving, setSaving] = useState(false);
@@ -329,7 +331,7 @@ export function ContentTypeEditor({ basePath, itemId, type }) {
     setError("");
     setStatus("");
     if (!form.title.trim() || !form.slug.trim()) {
-      setActiveTab("content");
+      setActiveTab("hero");
       setError("Add a title and URL slug before saving.");
       return;
     }
@@ -373,9 +375,14 @@ export function ContentTypeEditor({ basePath, itemId, type }) {
         <form className="admin-post-editor" onSubmit={save}>
           <Tabs activeTab={activeTab} onChange={setActiveTab} tabs={editorTabs} />
           <section aria-labelledby={`admin-tab-${activeTab}`} id={`admin-tab-panel-${activeTab}`} role="tabpanel">
-            {activeTab === "content" ? (
+            {activeTab === "hero" ? (
               <fieldset className="admin-group">
-                <legend>{definition.singular.charAt(0).toUpperCase()}{definition.singular.slice(1)} content</legend>
+                <legend>{definition.archiveOnly ? "Card content" : "Hero and page information"}</legend>
+                <p className="admin-field-note">
+                  {definition.archiveOnly
+                    ? `These fields control how this ${definition.singular} appears in public listings.`
+                    : "These fields control the first section visitors see at the top of the page."}
+                </p>
                 <div className="admin-post-editor__two-column">
                   <div className="field">
                     <label htmlFor={`${type}-title`}>{definition.titleLabel || "Title"}</label>
@@ -384,65 +391,98 @@ export function ContentTypeEditor({ basePath, itemId, type }) {
                   <div className="field"><label htmlFor={`${type}-slug`}>URL slug</label><input id={`${type}-slug`} onChange={(event) => update("slug", slugify(event.target.value))} placeholder="e.g. clear-descriptive-title" required value={form.slug} /></div>
                 </div>
                 <div className="field"><label htmlFor={`${type}-category`}>{definition.categoryLabel}</label><input id={`${type}-category`} onChange={(event) => update("category", event.target.value)} placeholder={definition.categoryPlaceholder} value={form.category || ""} /></div>
-                <div className="field"><label htmlFor={`${type}-summary`}>{definition.excerptLabel || "Summary"}</label><textarea id={`${type}-summary`} onChange={(event) => update("excerpt", event.target.value)} placeholder={definition.kind === "testimonial" ? "Write the client testimonial" : "Write a short summary for cards and search results"} rows="4" value={form.excerpt || ""} /></div>
-                <div className="field admin-field"><label>Page content</label><RichTextEditor label={`${definition.singular} content`} onChange={(value) => update("body", value)} value={form.body || ""} /></div>
+                {!definition.vacancyFields ? <div className="field"><label htmlFor={`${type}-summary`}>{definition.excerptLabel || (definition.archiveOnly ? "Card introduction" : "Hero summary")}</label><textarea id={`${type}-summary`} onChange={(event) => update("excerpt", event.target.value)} placeholder={definition.kind === "testimonial" ? "Write the client testimonial" : definition.archiveOnly ? "Write the text shown on the card" : "Write the short introduction shown in the hero"} rows="4" value={form.excerpt || ""} /></div> : null}
+                {definition.detailFields || definition.vacancyFields ? <div className="field"><label htmlFor={`${type}-hero-eyebrow`}>Hero eyebrow</label><input id={`${type}-hero-eyebrow`} onChange={(event) => update("meta", { ...form.meta, heroEyebrow: event.target.value })} placeholder={definition.vacancyFields ? "e.g. Careers" : "e.g. Our capability"} value={form.meta?.heroEyebrow || ""} /></div> : null}
+                {definition.vacancyFields ? <div className="admin-post-editor__two-column">
+                  <div className="field"><label htmlFor="vacancy-location">Location</label><input id="vacancy-location" onChange={(event) => update("location", event.target.value)} placeholder="e.g. Yorkshire / Nationwide" value={form.location || ""} /></div>
+                  <div className="field"><label htmlFor="vacancy-hours">Hours</label><input id="vacancy-hours" onChange={(event) => update("hours", event.target.value)} placeholder="e.g. Full time" value={form.hours || ""} /></div>
+                  <div className="field"><label htmlFor="vacancy-salary">Salary</label><input id="vacancy-salary" onChange={(event) => update("salary", event.target.value)} placeholder="e.g. Competitive" value={form.salary || ""} /></div>
+                </div> : null}
+                <MediaField
+                  accept={definition.mediaType || "image"}
+                  label={definition.archiveOnly ? `${definition.singular.charAt(0).toUpperCase()}${definition.singular.slice(1)} image` : "Hero image"}
+                  onChange={(media) => setForm((current) => ({
+                    ...current,
+                    image: media?.secureUrl || media?.url || "",
+                    meta: { ...current.meta, imageAlt: media?.alt || "" },
+                  }))}
+                  value={form.image ? { secureUrl: form.image, alt: form.meta?.imageAlt || form.title, resourceType: definition.mediaType } : null}
+                />
               </fieldset>
             ) : null}
 
-            {activeTab === "details" && hasDetailsTab ? (
+            {activeTab === "content" ? (
               <fieldset className="admin-group">
-                <legend>Additional details</legend>
-                {definition.date ? <div className="field"><label htmlFor="news-date">Publication date</label><input id="news-date" onChange={(event) => update("publishedAt", event.target.value)} placeholder="Choose publication date" type="date" value={String(form.publishedAt || "").slice(0, 10)} /></div> : null}
+                <legend>{definition.vacancyFields ? "Role content" : hasStructuredContent ? "Main page content" : `${definition.singular.charAt(0).toUpperCase()}${definition.singular.slice(1)} content`}</legend>
+                <p className="admin-field-note">The fields below follow the same top-to-bottom order as the public page. Empty optional fields are not displayed.</p>
                 {definition.vacancyFields ? (
                   <>
-                    <p className="admin-field-note">Every field is optional. Leave it empty and that content will not appear on this vacancy.</p>
                     <div className="admin-post-editor__two-column">
-                      <div className="field"><label htmlFor="vacancy-location">Location</label><input id="vacancy-location" onChange={(event) => update("location", event.target.value)} placeholder="e.g. Yorkshire / Nationwide" value={form.location || ""} /></div>
-                      <div className="field"><label htmlFor="vacancy-hours">Hours</label><input id="vacancy-hours" onChange={(event) => update("hours", event.target.value)} placeholder="e.g. Full time" value={form.hours || ""} /></div>
-                      <div className="field"><label htmlFor="vacancy-salary">Salary</label><input id="vacancy-salary" onChange={(event) => update("salary", event.target.value)} placeholder="e.g. Competitive" value={form.salary || ""} /></div>
-                      <div className="field"><label htmlFor="vacancy-hero-eyebrow">Hero eyebrow</label><input id="vacancy-hero-eyebrow" onChange={(event) => update("meta", { ...form.meta, heroEyebrow: event.target.value })} placeholder="e.g. Careers" value={form.meta?.heroEyebrow || ""} /></div>
                       <div className="field"><label htmlFor="vacancy-role-eyebrow">Role eyebrow</label><input id="vacancy-role-eyebrow" onChange={(event) => update("meta", { ...form.meta, roleEyebrow: event.target.value })} placeholder="e.g. The role" value={form.meta?.roleEyebrow || ""} /></div>
                       <div className="field"><label htmlFor="vacancy-role-heading">Role heading</label><input id="vacancy-role-heading" onChange={(event) => update("meta", { ...form.meta, roleHeading: event.target.value })} placeholder="Add a role heading" value={form.meta?.roleHeading || ""} /></div>
+                    </div>
+                    <div className="field"><label htmlFor={`${type}-summary`}>Role introduction</label><textarea id={`${type}-summary`} onChange={(event) => update("excerpt", event.target.value)} placeholder="Write a short introduction to the role" rows="4" value={form.excerpt || ""} /></div>
+                    <div className="field admin-field"><label>Role description</label><RichTextEditor label="Vacancy role description" onChange={(value) => update("body", value)} value={form.body || ""} /></div>
+                    <div className="admin-post-editor__two-column">
                       <div className="field"><label htmlFor="vacancy-duties-heading">Duties heading</label><input id="vacancy-duties-heading" onChange={(event) => update("meta", { ...form.meta, dutiesHeading: event.target.value })} placeholder="e.g. What you’ll do" value={form.meta?.dutiesHeading || ""} /></div>
                       <div className="field"><label htmlFor="vacancy-requirements-heading">Requirements heading</label><input id="vacancy-requirements-heading" onChange={(event) => update("meta", { ...form.meta, requirementsHeading: event.target.value })} placeholder="e.g. What you’ll bring" value={form.meta?.requirementsHeading || ""} /></div>
-                      <div className="field"><label htmlFor="vacancy-apply-prefix">Application eyebrow</label><input id="vacancy-apply-prefix" onChange={(event) => update("meta", { ...form.meta, applyPrefix: event.target.value })} placeholder="e.g. Apply for" value={form.meta?.applyPrefix || ""} /></div>
-                      <div className="field"><label htmlFor="vacancy-apply-heading">Application heading</label><input id="vacancy-apply-heading" onChange={(event) => update("meta", { ...form.meta, applyHeading: event.target.value })} placeholder="Add an application heading" value={form.meta?.applyHeading || ""} /></div>
                     </div>
+                    <div className="field"><label htmlFor="vacancy-duties">Role duties</label><textarea id="vacancy-duties" onChange={(event) => update("meta", { ...form.meta, duties: event.target.value.split("\n").map((item) => item.trim()).filter(Boolean) })} placeholder="Add one duty per line" rows="6" value={(form.meta?.duties || []).join("\n")} /></div>
+                    <div className="field admin-field"><label>Requirements text</label><RichTextEditor label="Vacancy requirements text" onChange={(requirementsText) => update("meta", { ...form.meta, requirementsText })} value={form.meta?.requirementsText || ""} /></div>
                   </>
                 ) : null}
-                {definition.projectFields ? (
-                  <div className="admin-post-editor__two-column">
-                    <div className="field"><label htmlFor="project-sector">Sector</label><input id="project-sector" onChange={(event) => update("meta", { ...form.meta, sector: event.target.value })} placeholder="e.g. Infrastructure" value={form.meta?.sector || ""} /></div>
-                    <div className="field"><label htmlFor="project-location">Location</label><input id="project-location" onChange={(event) => update("location", event.target.value)} placeholder="e.g. West Yorkshire" value={form.location || ""} /></div>
-                  </div>
-                ) : null}
                 {definition.detailFields ? (
-                  <div className="admin-post-editor__detail-fields">
-                    <h2 className="h5">Detail-page content</h2>
-                    <p className="admin-field-note">Every field is optional. Leave it empty and that content will not appear on this {definition.singular}.</p>
+                  <>
                     <div className="admin-post-editor__two-column">
-                      <div className="field"><label htmlFor={`${type}-hero-eyebrow`}>Hero eyebrow</label><input id={`${type}-hero-eyebrow`} onChange={(event) => update("meta", { ...form.meta, heroEyebrow: event.target.value })} placeholder="e.g. Our capability" value={form.meta?.heroEyebrow || ""} /></div>
                       <div className="field"><label htmlFor={`${type}-content-eyebrow`}>Content eyebrow</label><input id={`${type}-content-eyebrow`} onChange={(event) => update("meta", { ...form.meta, contentEyebrow: event.target.value })} placeholder="e.g. Built around the job" value={form.meta?.contentEyebrow || ""} /></div>
                       <div className="field"><label htmlFor={`${type}-content-heading`}>Content heading</label><input id={`${type}-content-heading`} onChange={(event) => update("meta", { ...form.meta, contentHeading: event.target.value })} placeholder="e.g. The brief" value={form.meta?.contentHeading || ""} /></div>
-                      <div className="field"><label htmlFor={`${type}-safety-heading`}>Closing heading</label><input id={`${type}-safety-heading`} onChange={(event) => update("meta", { ...form.meta, safetyHeading: event.target.value })} placeholder="e.g. Safe by design" value={form.meta?.safetyHeading || ""} /></div>
                     </div>
+                    <div className="field admin-field"><label>Page content</label><RichTextEditor label={`${definition.singular} content`} onChange={(value) => update("body", value)} value={form.body || ""} /></div>
+                    {definition.highlights ? <div className="field"><label htmlFor="service-highlights">Service highlights</label><textarea id="service-highlights" onChange={(event) => update("meta", { ...form.meta, highlights: event.target.value.split("\n").map((item) => item.trim()).filter(Boolean) })} placeholder="Add one highlight per line" rows="5" value={(form.meta?.highlights || []).join("\n")} /></div> : null}
+                    {definition.projectFields ? <div className="admin-post-editor__two-column">
+                      <div className="field"><label htmlFor="project-sector">Sector</label><input id="project-sector" onChange={(event) => update("meta", { ...form.meta, sector: event.target.value })} placeholder="e.g. Infrastructure" value={form.meta?.sector || ""} /></div>
+                      <div className="field"><label htmlFor="project-location">Location</label><input id="project-location" onChange={(event) => update("location", event.target.value)} placeholder="e.g. West Yorkshire" value={form.location || ""} /></div>
+                    </div> : null}
+                    <div className="field"><label htmlFor={`${type}-safety-heading`}>Closing heading</label><input id={`${type}-safety-heading`} onChange={(event) => update("meta", { ...form.meta, safetyHeading: event.target.value })} placeholder="e.g. Safe by design" value={form.meta?.safetyHeading || ""} /></div>
                     <div className="field admin-field"><label>Closing text</label><RichTextEditor label={`${definition.singular} closing text`} onChange={(safetyText) => update("meta", { ...form.meta, safetyText })} value={form.meta?.safetyText || ""} /></div>
+                  </>
+                ) : null}
+                {!hasStructuredContent ? <div className="field admin-field"><label>Page content</label><RichTextEditor label={`${definition.singular} content`} onChange={(value) => update("body", value)} value={form.body || ""} /></div> : null}
+              </fieldset>
+            ) : null}
+
+            {activeTab === "conversion" && hasConversionTab ? (
+              <fieldset className="admin-group">
+                <legend>{definition.vacancyFields ? "Application section" : "Enquiry and next step"}</legend>
+                <p className="admin-field-note">These fields control the final conversion sections at the bottom of the public page.</p>
+                {definition.vacancyFields ? <>
+                  <div className="admin-post-editor__two-column">
+                    <div className="field"><label htmlFor="vacancy-apply-prefix">Application eyebrow</label><input id="vacancy-apply-prefix" onChange={(event) => update("meta", { ...form.meta, applyPrefix: event.target.value })} placeholder="e.g. Apply for" value={form.meta?.applyPrefix || ""} /></div>
+                    <div className="field"><label htmlFor="vacancy-apply-heading">Application heading</label><input id="vacancy-apply-heading" onChange={(event) => update("meta", { ...form.meta, applyHeading: event.target.value })} placeholder="Add an application heading" value={form.meta?.applyHeading || ""} /></div>
+                  </div>
+                  <div className="field admin-field"><label>Application introduction</label><RichTextEditor label="Vacancy application introduction" onChange={(applyText) => update("meta", { ...form.meta, applyText })} value={form.meta?.applyText || ""} /></div>
+                </> : <>
+                  <div className="admin-editor-section">
+                    <h2 className="h5">Enquiry form</h2>
+                    <p className="admin-field-note">This copy appears beside the enquiry form.</p>
                     <div className="admin-post-editor__two-column">
                       <div className="field"><label htmlFor={`${type}-enquiry-eyebrow`}>Enquiry eyebrow</label><input id={`${type}-enquiry-eyebrow`} onChange={(event) => update("meta", { ...form.meta, enquiryEyebrow: event.target.value })} placeholder="e.g. Need this capability?" value={form.meta?.enquiryEyebrow || ""} /></div>
                       <div className="field"><label htmlFor={`${type}-enquiry-heading`}>Enquiry heading</label><input id={`${type}-enquiry-heading`} onChange={(event) => update("meta", { ...form.meta, enquiryHeading: event.target.value })} placeholder="e.g. Let’s look at the job" value={form.meta?.enquiryHeading || ""} /></div>
+                    </div>
+                  </div>
+                  <div className="admin-editor-section">
+                    <h2 className="h5">Next-step banner</h2>
+                    <p className="admin-field-note">This banner appears after the main content and enquiry area.</p>
+                    <div className="admin-post-editor__two-column">
                       <div className="field"><label htmlFor={`${type}-next-eyebrow`}>Next-step eyebrow</label><input id={`${type}-next-eyebrow`} onChange={(event) => update("meta", { ...form.meta, nextEyebrow: event.target.value })} placeholder="e.g. Next step" value={form.meta?.nextEyebrow || ""} /></div>
                       <div className="field"><label htmlFor={`${type}-next-heading`}>Next-step heading</label><input id={`${type}-next-heading`} onChange={(event) => update("meta", { ...form.meta, nextHeading: event.target.value })} placeholder="Add the next-step heading" value={form.meta?.nextHeading || ""} /></div>
                     </div>
-                    {[{ key: "enquiryLink", label: "Enquiry button" }, { key: "projectsLink", label: "Secondary button" }].map(({ key, label }) => {
+                    {[{ key: "enquiryLink", label: "Primary button" }, { key: "projectsLink", label: "Secondary button" }].map(({ key, label }) => {
                       const linkValue = detailLink(form, key);
                       return <fieldset className="admin-group admin-link-field" key={key}><legend>{label}</legend><div className="admin-post-editor__two-column"><div className="field"><label htmlFor={`${type}-${key}-label`}>Label</label><input id={`${type}-${key}-label`} onChange={(event) => update("meta", { ...form.meta, [key]: { ...linkValue, label: event.target.value } })} placeholder="Button label" value={linkValue.label || ""} /></div><div className="field"><label htmlFor={`${type}-${key}-url`}>Destination</label><input id={`${type}-${key}-url`} onChange={(event) => update("meta", { ...form.meta, [key]: { ...linkValue, url: event.target.value } })} placeholder="/contact or https://…" value={linkValue.url || ""} /></div></div><label className="admin-checkbox"><input checked={Boolean(linkValue.newTab)} onChange={(event) => update("meta", { ...form.meta, [key]: { ...linkValue, newTab: event.target.checked } })} type="checkbox" /><span>Open in a new tab</span></label></fieldset>;
                     })}
                   </div>
-                ) : null}
-                {definition.highlights ? <div className="field"><label htmlFor="service-highlights">Service highlights</label><textarea id="service-highlights" onChange={(event) => update("meta", { ...form.meta, highlights: event.target.value.split("\n").map((item) => item.trim()).filter(Boolean) })} placeholder="Add one highlight per line" rows="5" value={(form.meta?.highlights || []).join("\n")} /></div> : null}
-                {definition.vacancyFields ? <div className="field"><label htmlFor="vacancy-duties">Role duties</label><textarea id="vacancy-duties" onChange={(event) => update("meta", { ...form.meta, duties: event.target.value.split("\n").map((item) => item.trim()).filter(Boolean) })} placeholder="Add one duty per line" rows="6" value={(form.meta?.duties || []).join("\n")} /></div> : null}
-                {definition.vacancyFields ? <div className="field admin-field"><label>Requirements text</label><RichTextEditor label="Vacancy requirements text" onChange={(requirementsText) => update("meta", { ...form.meta, requirementsText })} value={form.meta?.requirementsText || ""} /></div> : null}
-                {definition.vacancyFields ? <div className="field admin-field"><label>Application introduction</label><RichTextEditor label="Vacancy application introduction" onChange={(applyText) => update("meta", { ...form.meta, applyText })} value={form.meta?.applyText || ""} /></div> : null}
+                </>}
               </fieldset>
             ) : null}
 
@@ -457,18 +497,10 @@ export function ContentTypeEditor({ basePath, itemId, type }) {
 
             {activeTab === "publishing" ? (
               <fieldset className="admin-group">
-                <legend>Media & publishing</legend>
+                <legend>Publishing</legend>
+                <p className="admin-field-note">Control when and whether this content is available on the public website.</p>
                 <div className="field"><label htmlFor={`${type}-status`}>Status</label><Select inputId={`${type}-status`} isSearchable={false} onChange={(option) => update("status", option?.value || "draft")} options={statusOptions} placeholder="Select publishing status" value={statusOptions.find((option) => option.value === form.status)} /></div>
-                <MediaField
-                  accept={definition.mediaType || "image"}
-                  label={`${definition.singular.charAt(0).toUpperCase()}${definition.singular.slice(1)} image`}
-                  onChange={(media) => setForm((current) => ({
-                    ...current,
-                    image: media?.secureUrl || media?.url || "",
-                    meta: { ...current.meta, imageAlt: media?.alt || "" },
-                  }))}
-                  value={form.image ? { secureUrl: form.image, alt: form.meta?.imageAlt || form.title, resourceType: definition.mediaType } : null}
-                />
+                {definition.date ? <div className="field"><label htmlFor="news-date">Publication date</label><input id="news-date" onChange={(event) => update("publishedAt", event.target.value)} placeholder="Choose publication date" type="date" value={String(form.publishedAt || "").slice(0, 10)} /></div> : null}
               </fieldset>
             ) : null}
 

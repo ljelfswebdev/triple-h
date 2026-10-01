@@ -83,6 +83,17 @@ export const tripleHPageDefinitions = {
       { ...link("primaryLink", "Primary button"), defaultValue: { label: "Explore our capability", url: "/services", newTab: false } },
       { ...link("careersLink", "Careers button"), defaultValue: { label: "Join our team", url: "/careers", newTab: false } },
     ]),
+    tab("proof", "Key facts", ["content", "proof"], [
+      {
+        ...repeater("items", "Facts", [t("value", "Value", "24/7"), t("label", "Label", "Emergency response")]),
+        defaultValue: [
+          { value: "24/7", label: "Emergency response" },
+          { value: "UK", label: "Nationwide capability" },
+          { value: "360°", label: "Integrated delivery" },
+          { value: "1 team", label: "From plan to completion" },
+        ],
+      },
+    ]),
     tab("ticker", "Values ticker", ["content", "ticker"], [
       t("ariaLabel", "Accessibility label", "Triple H values and standards"),
       {
@@ -112,17 +123,17 @@ export const tripleHPageDefinitions = {
         ],
       },
     ]),
+    tab("projects", "Projects section", ["content", "projects"], [
+      t("eyebrow", "Eyebrow", "Selected work"),
+      t("title", "Heading", "Proof is in the delivery."),
+      { ...link("link", "Section button"), defaultValue: { label: "View all projects", url: "/projects", newTab: false } },
+    ]),
     tab("careers", "Careers panel", ["content", "careers"], [
       t("eyebrow", "Eyebrow", "Careers at Triple H"),
       t("title", "Heading", "Do work you can point to."),
       rt("text", "Text", "We’re growing practical teams with the tickets, backing and progression to build a proper career."),
       image("image", "Background image", MEDIA.arborist, "A skilled arborist working at height"),
       { ...link("link", "Section button"), defaultValue: { label: "See open roles", url: "/careers", newTab: false } },
-    ]),
-    tab("projects", "Projects section", ["content", "projects"], [
-      t("eyebrow", "Eyebrow", "Selected work"),
-      t("title", "Heading", "Proof is in the delivery."),
-      { ...link("link", "Section button"), defaultValue: { label: "View all projects", url: "/projects", newTab: false } },
     ]),
     tab("news", "News & enquiry", ["content", "news"], [
       t("eyebrow", "News eyebrow", "Latest"),
@@ -133,17 +144,6 @@ export const tripleHPageDefinitions = {
     tab("emergency", "Emergency strip", ["content", "emergency"], [
       t("eyebrow", "Eyebrow", "24/7 Emergency"),
       t("title", "Heading", "Need a rapid response?"),
-    ]),
-    tab("proof", "Key facts", ["content", "proof"], [
-      {
-        ...repeater("items", "Facts", [t("value", "Value", "24/7"), t("label", "Label", "Emergency response")]),
-        defaultValue: [
-          { value: "24/7", label: "Emergency response" },
-          { value: "UK", label: "Nationwide capability" },
-          { value: "360°", label: "Integrated delivery" },
-          { value: "1 team", label: "From plan to completion" },
-        ],
-      },
     ]),
   ]),
   about: shell("About us", "/about", ["About Triple H", "Big ambition. Grounded delivery.", "A practical contractor built around capable people, clear standards and long-term relationships.", MEDIA.team], [
