@@ -34,5 +34,9 @@ export default async function Header({ copy }) {
     })
     .filter((item) => CUSTOMER_PORTAL_ENABLED || !isPortalPath(item.href));
 
-  return <HeaderClient copy={copy.header} items={items} />;
+  const headerCopy = CUSTOMER_PORTAL_ENABLED
+    ? copy.header
+    : { ...copy.header, portalLink: undefined };
+
+  return <HeaderClient copy={headerCopy} items={items} />;
 }
