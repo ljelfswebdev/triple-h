@@ -14,9 +14,10 @@ export default function CareerApplication({ vacancy }) {
   async function submit(event) {
     event.preventDefault();
     if (busy) return;
+    const formElement = event.currentTarget;
     setBusy(true);
     setMessage("");
-    const data = new FormData(event.currentTarget);
+    const data = new FormData(formElement);
     data.set("vacancy", vacancy);
     data.set("consent", data.get("consent") === "on" ? "true" : "false");
     const response = await fetch("/api/applications", { method: "POST", body: data });
@@ -28,7 +29,7 @@ export default function CareerApplication({ vacancy }) {
     );
     if (response.ok) {
       trackFormCompleted("career-application", { vacancy });
-      event.currentTarget.reset();
+      formElement.reset();
     } else {
       trackFormFailed("career-application", { stage: "submission", vacancy });
     }

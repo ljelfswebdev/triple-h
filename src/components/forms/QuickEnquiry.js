@@ -16,10 +16,11 @@ export default function QuickEnquiry({ service, compact = false }) {
   async function submit(event) {
     event.preventDefault();
     if (busy) return;
+    const formElement = event.currentTarget;
     setBusy(true);
     setError("");
     setStatus("");
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     const values = Object.fromEntries(form.entries());
     const formGuard = Boolean(form.get("formGuard"));
     delete values.formGuard;
@@ -45,7 +46,7 @@ export default function QuickEnquiry({ service, compact = false }) {
         });
         if (newsletterResponse.ok) trackEvent("Newsletter Signup", { source: "service-enquiry" });
       }
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus(managedForm?.successMessage || copy.successMessage);
     } catch (submitError) {
       trackFormFailed("service-enquiry", { stage: "submission" });

@@ -13,9 +13,10 @@ export default function NewsletterSignup({ source = "footer" }) {
 
   async function submit(event) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setBusy(true);
     setMessage("");
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     const response = await fetch("/api/newsletter", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -26,7 +27,7 @@ export default function NewsletterSignup({ source = "footer" }) {
     if (response.ok) {
       trackEvent("Newsletter Signup", { source });
       trackFormCompleted("newsletter", { source });
-      event.currentTarget.reset();
+      formElement.reset();
     } else {
       trackFormFailed("newsletter", { source, stage: "submission" });
     }
