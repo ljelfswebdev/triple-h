@@ -20,6 +20,7 @@
     "audit:seo": "node scripts/audit-seo.mjs",
     "seed:testimonials": "node scripts/seed-testimonials.mjs",
     "seed:accreditations": "node scripts/seed-accreditations.mjs",
+    "migrate:materialize-post-copy": "node scripts/materialize-existing-post-copy.mjs",
     "remove:video-post-type": "node scripts/remove-video-post-type.mjs",
     "seed:legal": "node scripts/seed-legal-pages.mjs",
     "test": "node --test tests/*.test.js",
