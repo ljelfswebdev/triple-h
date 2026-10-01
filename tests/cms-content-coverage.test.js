@@ -5,6 +5,7 @@ import { defaultGlobals, globalTabs } from "../src/lib/admin/globals.js";
 import { defaultSiteCopy } from "../src/lib/site-copy.js";
 import { createDefaultPage, pageDefinitions } from "../src/lib/page-definitions.js";
 import { seedForms } from "../src/lib/admin/forms.js";
+import { CUSTOMER_PORTAL_ENABLED, isPortalPath, isPublicPageEnabled } from "../src/lib/features.js";
 
 test("Globals only contains truly shared public copy", () => {
   const editableGroups = new Set(
@@ -42,6 +43,45 @@ test("page-specific and form-specific copy lives in the correct admin area", () 
     new Set(seedForms.map((form) => form.key)),
     new Set(["service-enquiry", "career-application", "newsletter-signup"]),
   );
+});
+
+test("the dormant customer portal is absent from public and admin surfaces", () => {
+  assert.equal(CUSTOMER_PORTAL_ENABLED, false);
+  assert.equal(isPublicPageEnabled("portal"), false);
+  assert.equal(isPublicPageEnabled("portal-reset-password"), false);
+  assert.equal(isPublicPageEnabled("homepage"), true);
+  assert.equal(isPortalPath("/portal"), true);
+  assert.equal(isPortalPath("/portal/reset-password"), true);
+  assert.equal(isPortalPath("/contact"), false);
+
+  const header = readFileSync(
+    new URL("../src/components/global/HeaderClient.js", import.meta.url),
+    "utf8",
+  );
+  const headerData = readFileSync(
+    new URL("../src/components/global/Header.js", import.meta.url),
+    "utf8",
+  );
+  const footer = readFileSync(
+    new URL("../src/components/global/Footer.js", import.meta.url),
+    "utf8",
+  );
+  assert.match(header, /CUSTOMER_PORTAL_ENABLED/);
+  assert.match(headerData, /isPortalPath/);
+  assert.match(footer, /isPortalPath/);
+
+  for (const route of [
+    "../src/app/api/auth/forgot-password/route.js",
+    "../src/app/api/auth/reset-password/route.js",
+    "../src/app/api/portal/auth/login/route.js",
+    "../src/app/api/portal/auth/register/route.js",
+    "../src/app/api/portal/overview/route.js",
+    "../src/app/api/portal/password/route.js",
+  ]) {
+    const source = readFileSync(new URL(route, import.meta.url), "utf8");
+    assert.match(source, /CUSTOMER_PORTAL_ENABLED/);
+    assert.match(source, /status: 404/);
+  }
 });
 
 test("post types do not inherit hidden detail-page content", () => {

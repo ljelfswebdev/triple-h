@@ -13,10 +13,12 @@ import {
 } from "@/lib/request-security";
 import { rateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import { botProtectionResponse } from "@/lib/bot-protection";
+import { CUSTOMER_PORTAL_ENABLED } from "@/lib/features";
 
 const DUMMY_PASSWORD_HASH = "$2b$12$C6UzMDM.H6dfI/f/IKcEe.yrxq1bsu3fKn0NGmX2qtRROE5N5T7Kq";
 
 export async function POST(req) {
+  if (!CUSTOMER_PORTAL_ENABLED) return NextResponse.json({ error: "Not found" }, { status: 404 });
   try {
     assertTrustedMutation(req);
     const blocked = await botProtectionResponse();

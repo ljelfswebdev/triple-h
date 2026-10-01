@@ -1,17 +1,17 @@
 import { getContentCollection } from "@/lib/content-items";
 import { getEditablePage } from "@/lib/page-content";
-import { pageDefinitions } from "@/lib/page-definitions";
+import { publicPageDefinitions } from "@/lib/page-definitions";
 import { getSiteUrl } from "@/lib/site-url";
 
 export default async function sitemap() {
   const siteUrl = getSiteUrl();
   const [services, projects, news, vacancies, ...pages] = await Promise.all([
     getContentCollection("service"), getContentCollection("project"), getContentCollection("news"), getContentCollection("vacancy"),
-    ...Object.keys(pageDefinitions).map(getEditablePage),
+    ...Object.keys(publicPageDefinitions).map(getEditablePage),
   ]);
   const staticEntries = pages
     .filter((page) => !page.seo?.noIndex)
-    .map((page) => ({ path: pageDefinitions[page.slug].publicPath, updatedAt: page.updatedAt }));
+    .map((page) => ({ path: publicPageDefinitions[page.slug].publicPath, updatedAt: page.updatedAt }));
   const dynamicEntries = [
     ...services.map((item) => ({ item, path: `/services/${item.slug}` })),
     ...projects.map((item) => ({ item, path: `/projects/${item.slug}` })),

@@ -4,6 +4,7 @@ import {
   termsAndConditionsDefinition,
 } from "./pages/legal.js";
 import { tripleHPageDefinitions } from "./pages/triple-h.js";
+import { isPublicPageEnabled } from "./features.js";
 
 export const pageDefinitions = {
   ...tripleHPageDefinitions,
@@ -11,6 +12,10 @@ export const pageDefinitions = {
   "cookie-policy": cookiePolicyDefinition,
   "privacy-policy": privacyPolicyDefinition,
 };
+
+export const publicPageDefinitions = Object.fromEntries(
+  Object.entries(pageDefinitions).filter(([slug]) => isPublicPageEnabled(slug)),
+);
 
 export function createFieldDefaults(fields) {
   return Object.fromEntries(

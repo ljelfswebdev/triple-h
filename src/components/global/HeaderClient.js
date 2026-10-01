@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import BrandMark from "./BrandMark";
+import { CUSTOMER_PORTAL_ENABLED } from "@/lib/features";
 
 export default function HeaderClient({ copy, items }) {
   const [open, setOpen] = useState(false);
@@ -152,7 +153,7 @@ export default function HeaderClient({ copy, items }) {
             </ul>
             <div className="th-nav__actions">
               <Link className="btn btn-primary" href={copy.contactLink.url} onClick={closeMenu}>{copy.contactLink.label}</Link>
-              <Link className="btn btn-white-outline" href={copy.portalLink.url} onClick={closeMenu}>{copy.portalLink.label}</Link>
+              {CUSTOMER_PORTAL_ENABLED ? <Link className="btn btn-white-outline" href={copy.portalLink.url} onClick={closeMenu}>{copy.portalLink.label}</Link> : null}
             </div>
             <div className={`th-nav__mobile-panel${mobilePanel ? " is-open" : ""}`} aria-hidden={!mobilePanel}>
               {mobilePanel ? (

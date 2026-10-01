@@ -7,8 +7,10 @@ import PasswordReset from "@/models/PasswordReset";
 import { getSiteUrl } from "@/lib/site-url";
 import { assertTrustedMutation, errorResponse, JSON_LIMITS, readLimitedJson } from "@/lib/request-security";
 import { botProtectionResponse } from "@/lib/bot-protection";
+import { CUSTOMER_PORTAL_ENABLED } from "@/lib/features";
 
 export async function POST(req) {
+  if (!CUSTOMER_PORTAL_ENABLED) return NextResponse.json({ error: "Not found" }, { status: 404 });
   try {
     assertTrustedMutation(req);
     const blocked = await botProtectionResponse();

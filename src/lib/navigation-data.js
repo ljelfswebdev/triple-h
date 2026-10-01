@@ -33,7 +33,6 @@ export const navigationDefaults = [
       { label: "About us", type: "custom", url: "/about", pageSlug: "", newTab: false },
       { label: "Projects", type: "custom", url: "/projects", pageSlug: "", newTab: false },
       { label: "Careers", type: "custom", url: "/careers", pageSlug: "", newTab: false },
-      { label: "Customer & employee portal", type: "custom", url: "/portal", pageSlug: "", newTab: false },
       { label: "Privacy policy", type: "custom", url: "/privacy-policy", pageSlug: "", newTab: false },
     ],
   },
@@ -42,4 +41,3 @@ export const navigationDefaults = [
 export const navigationDefaultsByKey = Object.fromEntries(
   navigationDefaults.map((navigation) => [navigation.key, navigation]),
 );
-

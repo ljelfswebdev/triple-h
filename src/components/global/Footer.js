@@ -2,10 +2,13 @@ import Link from "next/link";
 import BrandMark from "./BrandMark";
 import NewsletterSignup from "@/components/forms/NewsletterSignup";
 import { getNavigation, navigationHref } from "@/lib/site-data";
+import { CUSTOMER_PORTAL_ENABLED, isPortalPath } from "@/lib/features";
 
 function menuItems(navigation) {
   const source = navigation.items || [];
-  return source.map((item) => ({ ...item, href: navigationHref(item) }));
+  return source
+    .map((item) => ({ ...item, href: navigationHref(item) }))
+    .filter((item) => CUSTOMER_PORTAL_ENABLED || !isPortalPath(item.href));
 }
 
 function FooterMenu({ items }) {

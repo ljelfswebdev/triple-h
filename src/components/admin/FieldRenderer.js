@@ -1,13 +1,13 @@
 "use client";
 
-import { createFieldDefaults, pageDefinitions } from "@/lib/page-definitions";
+import { createFieldDefaults, publicPageDefinitions } from "@/lib/page-definitions";
 import { formPlaceholder } from "@/lib/form-placeholders";
 import MediaField from "./MediaField";
 import RichTextEditor from "./RichTextEditor";
 import Select from "./Select";
 import SortableRepeater from "./SortableRepeater";
 
-const pageOptions = Object.entries(pageDefinitions).map(([value, definition]) => ({
+const pageOptions = Object.entries(publicPageDefinitions).map(([value, definition]) => ({
   label: definition.title,
   value,
 }));

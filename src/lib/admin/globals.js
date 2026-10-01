@@ -1,4 +1,5 @@
 import { defaultSiteCopy } from "../site-copy.js";
+import { CUSTOMER_PORTAL_ENABLED } from "../features.js";
 
 const text = (name, label, extra = {}) => ({ name, label, type: "text", ...extra });
 const link = (name, label) => ({ name, label, type: "link" });
@@ -19,7 +20,8 @@ export const globalTabs = [
     fields: [
       text("skipLabel", "Skip-link label"), text("menuLabel", "Menu label"), text("exploreLabel", "Dropdown eyebrow"),
       text("megaDescription", "Dropdown introduction", { multiline: true }), text("backLabel", "Mobile back label"),
-      link("contactLink", "Contact button"), link("portalLink", "Portal button"),
+      link("contactLink", "Contact button"),
+      ...(CUSTOMER_PORTAL_ENABLED ? [link("portalLink", "Portal button")] : []),
       text("servicesOverviewLabel", "Services overview label"), text("servicesOverviewDescription", "Services overview description", { multiline: true }),
       repeater("aboutLinks", "About dropdown links", [text("label", "Label"), text("description", "Description", { multiline: true }), link("link", "Destination")]),
     ],

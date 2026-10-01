@@ -1,6 +1,7 @@
 import HeaderClient from "./HeaderClient";
 import { getContentCollection } from "@/lib/content-items";
 import { getNavigation, navigationHref } from "@/lib/site-data";
+import { CUSTOMER_PORTAL_ENABLED, isPortalPath } from "@/lib/features";
 
 export default async function Header({ copy }) {
   const [navigation, services] = await Promise.all([
@@ -21,15 +22,17 @@ export default async function Header({ copy }) {
       description: service.excerpt,
     })),
   ];
-  const items = source.map((item) => {
-    const href = navigationHref(item);
-    return {
-      label: item.label,
-      href,
-      newTab: Boolean(item.newTab),
-      children: href === "/services" ? serviceLinks : href === "/about" ? aboutLinks : undefined,
-    };
-  });
+  const items = source
+    .map((item) => {
+      const href = navigationHref(item);
+      return {
+        label: item.label,
+        href,
+        newTab: Boolean(item.newTab),
+        children: href === "/services" ? serviceLinks : href === "/about" ? aboutLinks : undefined,
+      };
+    })
+    .filter((item) => CUSTOMER_PORTAL_ENABLED || !isPortalPath(item.href));
 
   return <HeaderClient copy={copy.header} items={items} />;
 }

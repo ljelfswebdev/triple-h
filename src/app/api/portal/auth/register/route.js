@@ -14,10 +14,12 @@ import {
 } from "@/lib/request-security";
 import { rateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import { botProtectionResponse } from "@/lib/bot-protection";
+import { CUSTOMER_PORTAL_ENABLED } from "@/lib/features";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(req) {
+  if (!CUSTOMER_PORTAL_ENABLED) return NextResponse.json({ error: "Not found" }, { status: 404 });
   try {
     assertTrustedMutation(req);
     const blocked = await botProtectionResponse();

@@ -9,7 +9,11 @@ test("all public menus have distinct keys and usable seeded links", () => {
   );
   assert.equal(navigationDefaultsByKey.main.items.length, 6);
   assert.equal(navigationDefaultsByKey["footer-services"].items.length, 6);
-  assert.equal(navigationDefaultsByKey["footer-explore"].items.length, 5);
+  assert.equal(navigationDefaultsByKey["footer-explore"].items.length, 4);
+  assert.equal(
+    navigationDefaultsByKey["footer-explore"].items.some((item) => item.url.startsWith("/portal")),
+    false,
+  );
 
   for (const navigation of navigationDefaults) {
     assert.ok(navigation.label);

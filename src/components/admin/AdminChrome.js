@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import PasswordField from "@/components/ui/PasswordField";
-import { pageDefinitions } from "@/lib/page-definitions";
+import { publicPageDefinitions } from "@/lib/page-definitions";
+import { CUSTOMER_PORTAL_ENABLED } from "@/lib/features";
 import { adminRequest, StatusMessage } from "./admin-utils";
 
 export function Login({ basePath, onLogin }) {
@@ -91,8 +92,7 @@ export function AdminShell({ basePath, children, onLogout, user }) {
     ["Form maker", "forms"],
     ["Globals", "globals"],
     ["Submissions", "submissions"],
-    ["Portal users", "portal-users"],
-    ["Notifications", "notifications"],
+    ...(CUSTOMER_PORTAL_ENABLED ? [["Portal users", "portal-users"], ["Notifications", "notifications"]] : []),
     ["Newsletter", "newsletter"],
     ["Admin users", "users"],
   ];
@@ -195,8 +195,10 @@ export function Dashboard({ basePath }) {
     ["Form maker", "Create reusable forms and sortable fields", "forms"],
     ["Globals", "Footer, contact details and social links", "globals"],
     ["Admin users", "Create and manage CMS administrator accounts", "users"],
-    ["Portal users", "Manage employee and customer access", "portal-users"],
-    ["Notifications", "Target portal updates by role, category or person", "notifications"],
+    ...(CUSTOMER_PORTAL_ENABLED ? [
+      ["Portal users", "Manage employee and customer access", "portal-users"],
+      ["Notifications", "Target portal updates by role, category or person", "notifications"],
+    ] : []),
     ["Newsletter", "View subscribers and email the active list", "newsletter"],
   ];
 
@@ -223,7 +225,7 @@ export function Pages({ basePath }) {
         <div><h1 className="h3">Pages</h1><p>Edit the content and SEO for every public page. Services, projects, news and vacancy detail pages live in their own sections.</p></div>
       </div>
       <div className="admin-page-list">
-        {Object.entries(pageDefinitions).map(([slug, definition]) => (
+        {Object.entries(publicPageDefinitions).map(([slug, definition]) => (
           <article className="admin-page-row" key={slug}>
             <div><strong>{definition.title}</strong><span>{definition.publicPath || `/${slug}`}</span></div>
             <div className="admin-page-row__actions">

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createDefaultPage, pageDefinitions } from "../src/lib/page-definitions.js";
+import { createDefaultPage, publicPageDefinitions } from "../src/lib/page-definitions.js";
 
 const expectedRoutes = [
   "/",
@@ -17,14 +17,12 @@ const expectedRoutes = [
   "/news",
   "/privacy-policy",
   "/projects",
-  "/portal",
-  "/portal/reset-password",
   "/services",
   "/terms-and-conditions",
 ];
 
 test("the Pages admin registers every public static/index page exactly once", () => {
-  const routes = Object.entries(pageDefinitions)
+  const routes = Object.entries(publicPageDefinitions)
     .map(([slug, definition]) => definition.publicPath || `/${slug}`)
     .sort();
 

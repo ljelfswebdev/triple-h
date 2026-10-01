@@ -9,6 +9,7 @@ import {
   defaultNavigations,
 } from "@/lib/admin-definitions";
 import { createDefaultPage, pageDefinitions } from "@/lib/page-definitions";
+import { CUSTOMER_PORTAL_ENABLED, isPublicPageEnabled } from "@/lib/features";
 import { AdminShell, Dashboard, Login, Pages } from "./AdminChrome";
 import { AdminUsers, AdminUserView } from "./AdminUserViews";
 import PaginationControls from "@/components/ui/PaginationControls";
@@ -651,7 +652,7 @@ export default function AdminApp({ initialSession, route }) {
   if (!route[0]) content = <Dashboard basePath={basePath} />;
   else if (route[0] === "pages" && !route[1])
     content = <Pages basePath={basePath} />;
-  else if (route[0] === "pages" && pageDefinitions[route[1]]) {
+  else if (route[0] === "pages" && pageDefinitions[route[1]] && isPublicPageEnabled(route[1])) {
     content = <PageView basePath={basePath} slug={route[1]} />;
   } else if (route[0] === "navigation") content = <NavigationView />;
   else if (route[0] === "forms" && !route[1])
@@ -680,9 +681,9 @@ export default function AdminApp({ initialSession, route }) {
     content = <ContentTypeEditor basePath={basePath} itemId={route[1]} type={route[0]} />;
   } else if (contentTypeDefinitions[route[0]]) {
     content = <ContentTypeList basePath={basePath} type={route[0]} />;
-  } else if (route[0] === "portal-users") {
+  } else if (CUSTOMER_PORTAL_ENABLED && route[0] === "portal-users") {
     content = <PortalUsers />;
-  } else if (route[0] === "notifications") {
+  } else if (CUSTOMER_PORTAL_ENABLED && route[0] === "notifications") {
     content = <NotificationManager />;
   } else if (route[0] === "newsletter") {
     content = <NewsletterManager />;
