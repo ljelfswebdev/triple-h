@@ -20,12 +20,8 @@
 }
 
 .th-header__inner { display: flex; min-height: var(--header-height); align-items: center; justify-content: space-between; gap: 32px; }
-.brand-mark { display: grid; grid-template-columns: auto auto; width: 150px; color: var(--color-black); line-height: .75; text-transform: uppercase; }
-.brand-mark--light { color: var(--color-white); }
-.brand-mark__triple { grid-column: 1 / -1; font-family: var(--font-display), sans-serif; font-size: 24px; letter-spacing: .13em; }
-.brand-mark__h { grid-row: 2 / span 2; color: var(--color-primary); font-family: Georgia, serif; font-size: 64px; font-weight: 900; line-height: .8; text-shadow: 2px 2px 0 var(--color-white); }
-.brand-mark__name { align-self: end; padding: 0 0 3px 4px; font-family: var(--font-display), sans-serif; font-size: 17px; line-height: .8; }
-.brand-mark__name::first-line { line-height: 1; }
+.brand-mark { display: block; width: 112px; line-height: 0; }
+.brand-mark__image { display: block; width: 100%; height: auto; object-fit: contain; }
 .th-header a { text-decoration: none; }
 .th-nav { display: flex; align-self: stretch; align-items: center; justify-content: flex-end; gap: 36px; }
 .th-nav__primary { display: flex; align-self: stretch; align-items: center; margin: 0; padding: 0; list-style: none; gap: clamp(16px, 2vw, 32px); }
@@ -368,6 +364,7 @@
 .th-footer { background: var(--color-black); color: var(--color-white); }
 .th-footer__grid { display: grid; grid-template-columns: 1.3fr .8fr .8fr 1fr; gap: clamp(32px, 6vw, 80px); padding-block: 80px; }
 .th-footer__brand > p { max-width: 320px; margin-block: 28px; font-size: var(--font-body-large); }
+.th-footer__brand .brand-mark { width: 140px; }
 .footer-heading { margin: 0 0 20px; font-family: var(--font-outfit), sans-serif; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .th-footer ul { margin: 0; padding: 0; list-style: none; }
 .th-footer li + li { margin-top: 12px; }
@@ -441,10 +438,7 @@
 
 @media (max-width: 700px) {
   :root { --header-height: 82px; }
-  .brand-mark { width: 126px; }
-  .brand-mark__triple { font-size: 20px; }
-  .brand-mark__h { font-size: 53px; }
-  .brand-mark__name { font-size: 14px; }
+  .brand-mark { width: 92px; }
   .th-hero { min-height: 820px; }
   .th-hero > img, .page-hero > img { animation: none; transform: scale(1.035); }
   .th-hero__content { padding-block: 150px 78px; }

@@ -3,6 +3,13 @@ export const defaultSiteCopy = {
     name: "Triple H Contracts & Hire",
     shortName: "Triple H",
     strapline: "Real work. Great people. Building tomorrow.",
+    logo: {
+      alt: "Triple H Contracts & Hire",
+      publicId: "",
+      resourceType: "image",
+      secureUrl: "/images/triple-h-logo.png",
+      url: "/images/triple-h-logo.png",
+    },
   },
   header: {
     skipLabel: "Skip to content",

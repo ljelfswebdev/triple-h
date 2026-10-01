@@ -69,7 +69,7 @@ export default function HeaderClient({ copy, items }) {
       <a className="skip-link" href="#main-content">{copy.skipLabel}</a>
       <header className={`th-header${open ? " th-header--menu-open" : ""}`}>
         <div className="container th-header__inner">
-          <BrandMark />
+          <BrandMark priority />
           <button
             aria-controls="primary-navigation"
             aria-expanded={open}

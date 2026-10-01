@@ -25,6 +25,9 @@ test("Globals only contains truly shared public copy", () => {
     ]),
   );
   assert.deepEqual(defaultGlobals.siteCopy, defaultSiteCopy);
+  const brandingTab = globalTabs.find((tab) => tab.id === "branding");
+  assert.equal(brandingTab.fields.find((field) => field.name === "logo")?.type, "media");
+  assert.equal(defaultGlobals.siteCopy.branding.logo.secureUrl, "/images/triple-h-logo.png");
 });
 
 test("page-specific and form-specific copy lives in the correct admin area", () => {

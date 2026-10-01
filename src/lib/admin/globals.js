@@ -2,6 +2,7 @@ import { defaultSiteCopy } from "../site-copy.js";
 
 const text = (name, label, extra = {}) => ({ name, label, type: "text", ...extra });
 const link = (name, label) => ({ name, label, type: "link" });
+const media = (name, label) => ({ name, label, type: "media", accept: "image" });
 const repeater = (name, label, fields) => ({ name, label, type: "repeater", fields });
 
 export const globalTabs = [
@@ -9,7 +10,7 @@ export const globalTabs = [
     id: "branding",
     label: "Branding",
     path: ["siteCopy", "branding"],
-    fields: [text("name", "Company name"), text("shortName", "Short company name"), text("strapline", "Strapline", { multiline: true })],
+    fields: [media("logo", "Website logo"), text("name", "Company name"), text("shortName", "Short company name"), text("strapline", "Strapline", { multiline: true })],
   },
   {
     id: "header",

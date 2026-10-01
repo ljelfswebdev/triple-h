@@ -260,18 +260,6 @@
   filter: drop-shadow(0 12px 28px rgb(0 0 0 / 42%));
 }
 
-.not-found-page__brand .brand-mark__triple {
-  font-size: clamp(27px, 4vw, 36px);
-}
-
-.not-found-page__brand .brand-mark__h {
-  font-size: clamp(74px, 11vw, 100px);
-}
-
-.not-found-page__brand .brand-mark__name {
-  font-size: clamp(18px, 2.7vw, 24px);
-}
-
 .not-found-page__code {
   margin: 0;
   font-family: var(--font-outfit), sans-serif;
