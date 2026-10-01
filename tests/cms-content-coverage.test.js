@@ -66,9 +66,11 @@ test("the dormant customer portal is absent from public and admin surfaces", () 
     new URL("../src/components/global/Footer.js", import.meta.url),
     "utf8",
   );
+  const siteLayout = readFileSync(new URL("../src/app/(site)/layout.js", import.meta.url), "utf8");
   assert.match(header, /CUSTOMER_PORTAL_ENABLED/);
   assert.match(headerData, /isPortalPath/);
   assert.match(footer, /isPortalPath/);
+  assert.match(siteLayout, /portalLink: undefined/);
 
   for (const route of [
     "../src/app/api/auth/forgot-password/route.js",

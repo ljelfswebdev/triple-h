@@ -8,13 +8,17 @@ import { SiteCopyProvider } from "@/components/global/SiteCopyProvider";
 import { getContentCollection } from "@/lib/content-items";
 import { getGlobals } from "@/lib/site-data";
 import { mergeSiteCopy } from "@/lib/site-copy";
+import { CUSTOMER_PORTAL_ENABLED } from "@/lib/features";
 
 export default async function SiteLayout({ children }) {
   const [globals, accreditations] = await Promise.all([
     getGlobals(),
     getContentCollection("accreditation"),
   ]);
-  const copy = mergeSiteCopy(globals?.siteCopy);
+  const mergedCopy = mergeSiteCopy(globals?.siteCopy);
+  const copy = CUSTOMER_PORTAL_ENABLED
+    ? mergedCopy
+    : { ...mergedCopy, header: { ...mergedCopy.header, portalLink: undefined } };
   return (
     <SiteCopyProvider value={copy}>
       <Header copy={copy} />
